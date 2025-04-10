@@ -1,5 +1,6 @@
 import type { Route } from "./+types/home";
 
+
 export function meta({}: Route.MetaArgs) {
   return [
     { title: "New React Router App" },
@@ -9,6 +10,6 @@ export function meta({}: Route.MetaArgs) {
 
 export default function Home() {
   return <>
-
+    <p>Education 폰트 적용 테스트</p>
   </>;
 }
