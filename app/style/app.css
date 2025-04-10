@@ -4,5 +4,5 @@
 
 html,
 body {
-  @apply bg-black text-white font-sans;
+  @apply text-black font-pretendard;
 }

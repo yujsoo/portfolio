@@ -5,7 +5,8 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['poppins', 'pretendard', 'sans-serif'],
+                poppins:['poppins', 'sans-serif'],
+                pretendard:['pretendard', 'sans-serif']
             },
         },
     },
