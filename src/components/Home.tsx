@@ -92,16 +92,11 @@ function Home() {
           </p>
         </div>
       </section>
-      <section className="pl-[200px] pt-[10vw] text-right">
+      <section className="pl-[200px] mt-[10vw] text-right">
         <h3 className="text-[6vw] font-PPNeueMontreal font-bold">
           Selected Projects.
         </h3>
-        <p className="text-[1.2vw] leading-tight">
-          Take a look at some of the projects I’ve worked on.
-          <br />
-          Click to dive deeper into each one!
-        </p>
-        <div className="flex justify-between items-end mt-[4vw]">
+        <div className="flex justify-between items-end mt-[2vw]">
           <p className="text-[3.3vw] font-bold">(6)</p>
           <p className="text-[1.2vw]">Experience.</p>
         </div>
@@ -109,7 +104,7 @@ function Home() {
           {projectItems.map((item) => (
             <li
               key={item.id}
-              className="flex p-6 border-black border-b hover:bg-black hover:text-white transition-all transition-duration-300"
+              className="flex p-[1.5vw] border-black border-b hover:bg-black hover:text-white transition-all transition-duration-300"
               onMouseEnter={() => setHoveredId(item.id)}
               onMouseLeave={() => setHoveredId(null)}>
               <div className="w-[24%] text-left relative overflow-hidden">
@@ -149,7 +144,7 @@ function Home() {
           ))}
         </ul>
       </section>
-      <section className="pl-[200px] pt-[5vw] text-right">
+      <section className="pl-[200px] mt-[5vw] text-right">
         <div className="flex justify-between items-end mt-[4vw]">
           <p className="text-[3.3vw] font-bold">(2)</p>
           <p className="text-[1.2vw]">Others.</p>
@@ -158,7 +153,7 @@ function Home() {
           {otherItems.map((item) => (
             <li
               key={item.id}
-              className="flex p-6 border-black border-b hover:bg-black hover:text-white transition-all transition-duration-300"
+              className="flex p-[1.5vw] border-black border-b hover:bg-black hover:text-white transition-all transition-duration-300"
               onMouseEnter={() => setHoveredId(item.id)}
               onMouseLeave={() => setHoveredId(null)}>
               <div className="w-[24%] text-left relative overflow-hidden">
@@ -198,13 +193,13 @@ function Home() {
           ))}
         </ul>
       </section>
-      <section className="mt-[14vw] flex">
+      <section className="pr-[200px] mt-[10vw] flex">
         <div className="w-1/2">
           <h3 className="text-[6vw] font-PPNeueMontreal font-bold leading-none">
             About Me.
           </h3>
         </div>
-        <div className="w-1/2 pt-8">
+        <div className="w-1/2 pt-8 break-keep leading-normal">
           <ul>
             <li className="py-10 ">
               <p className="px-2 mb-4 inline-block bg-black text-white">
@@ -228,24 +223,33 @@ function Home() {
               <p className="px-2 mb-4 inline-block bg-black text-white">
                 Career.
               </p>
-              <p>2020.06 ~ 2024.03 랩스튜디오(Wrap Studio) 퍼블리싱팀 팀장</p>
+              <p>
+                <span className="block mb-2 text-sm">2020.06 ~ 2024.03</span>
+                랩스튜디오(Wrap Studio) / 퍼블리싱팀 팀장
+              </p>
             </li>
             <li className="py-10 ">
               <p className="px-2 mb-4 inline-block bg-black text-white">
                 Education.
               </p>
-              <div className="mb-4">
-                <p>경인여자대학교 / 호텔관광학과 전공</p>
-                <span>2016.03 ~ 2018.02</span>
-              </div>
-              <div className="mb-4">
-                <p>스마트기기 UI/UX 웹디자인(웹퍼블리셔) 과정 수료</p>
-                <span>2019.11 ~ 2020.04</span>
-              </div>
-              <div>
-                <p>구름톤 딥다이브 프론트엔드 개발자 과정 수료</p>
-                <span>2024.08 ~ 2025.04</span>
-              </div>
+              <p className="mb-6">
+                <span className="block mb-1 text-sm text-[#888]">
+                  2016.03 - 2018.02
+                </span>
+                경인여자대학교 / 호텔관광학과 전공
+              </p>
+              <p className="mb-6">
+                <span className="block mb-1 text-sm text-[#888]">
+                  2019.11 - 2020.04
+                </span>
+                스마트기기 UI/UX 웹디자인(웹퍼블리셔) 과정 수료
+              </p>
+              <p>
+                <span className="block mb-1 text-sm text-[#888]">
+                  2024.08 - 2025.04
+                </span>
+                구름톤 딥다이브 프론트엔드 개발자 과정 수료
+              </p>
             </li>
             <li className="py-10">
               <p className="px-2 mb-4 inline-block bg-black text-white">
@@ -263,20 +267,16 @@ function Home() {
               <p className="px-2 mb-4 inline-block bg-black text-white">
                 What I Love(♥︎) to Do!
               </p>
-              <div className="mb-4">
-                <p>운동</p>
-                <p>
-                  코드와 싸우기 위해선 체력과 멘탈 관리도 중요하죠!
-                  <br /> 필라테스를 하며 집중력과 유연함을 챙기고 있습니다.
-                </p>
-              </div>
-              <div className="mb-4">
-                <p>여행</p>
-                <p>
-                  새로운 공간과 낯선 분위기를 마주하는 걸 좋아해요.
-                  <br /> 여행을 통해 자극과 아이디어를 얻곤 합니다.
-                </p>
-              </div>
+              <p className="mb-6">
+                <span className="block mb-1 text-[#888]">운동</span>
+                코드와 싸우기 위해선 체력과 멘탈 관리도 중요하죠!
+                <br /> 필라테스를 하며 집중력과 유연함을 챙기고 있습니다.
+              </p>
+              <p>
+                <span className="block mb-1 text-[#888]">여행</span>
+                새로운 공간과 낯선 분위기를 마주하는 걸 좋아해요.
+                <br /> 여행을 통해 자극과 아이디어를 얻곤 합니다.
+              </p>
             </li>
           </ul>
         </div>
