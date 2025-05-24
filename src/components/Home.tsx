@@ -1,5 +1,4 @@
 import introVideo from '../assets/intro.mp4'
-import profileImg from '../assets/yjs00.jpeg'
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
@@ -69,12 +68,14 @@ function Home() {
 
   return (
     <div className="overflow-hidden">
-      <section>
-        <p className="relative left-[30vw] mt-[25vw] text-[6vw] font-PPNeueMontreal font-bold leading-none whitespace-nowrap">
-          👋 Hello, I’m Jisoo — a Frontend Developer.
+      {/* 홈 - top */}
+      <section className="max-w-screen-xl mx-auto mt-56">
+        <p className="relative text-[90px] font-PPNeueMontreal font-bold leading-none">
+          Hello, I’m Jisoo Yu — 👋
+          <br />a Frontend Developer.
         </p>
         <video
-          className="relative z-2 w-[85vw] m-auto"
+          className="relative z-2 w-full m-auto"
           autoPlay
           loop
           muted
@@ -82,23 +83,23 @@ function Home() {
           <source src={introVideo} type="video/mp4" />
           브라우저가 비디오를 지원하지 않습니다.
         </video>
-        <div className="mt-[3vw] text-center font-PPNeueMontreal font-bold">
-          <p className="text-[1.67vw] leading-none">
+        <div className="my-48 text-center text-xl font-PPNeueMontreal">
+          <p>
             PASSIONATE ABOUT BUILDING <br />
             INTUITIVE AND PERFORMANT WEB APPLICATIONS
           </p>
-          <p className="text-[1.67vw] mt-[2vw] leading-none">
-            CODE. IMPROVE. REPEAT.
-          </p>
+          <p className="mt-12">CODE. IMPROVE. REPEAT.</p>
         </div>
       </section>
-      <section className="pl-[200px] mt-[10vw] text-right">
-        <h3 className="text-[6vw] font-PPNeueMontreal font-bold">
+
+      {/* 홈 - experience */}
+      <section className="max-w-screen-xl mx-auto">
+        <h3 className="mb-16 text-7xl font-bold font-PPNeueMontreal">
           Selected Projects.
         </h3>
-        <div className="flex justify-between items-end mt-[2vw]">
-          <p className="text-[3.3vw] font-bold">(6)</p>
-          <p className="text-[1.2vw]">Experience.</p>
+        <div className="flex justify-between items-end">
+          <p className="text-xl font-bold">(6)</p>
+          <p className="text-xl">Experience.</p>
         </div>
         <ul className="border-t-2 border-black">
           {projectItems.map((item) => (
@@ -108,7 +109,6 @@ function Home() {
               onMouseEnter={() => setHoveredId(item.id)}
               onMouseLeave={() => setHoveredId(null)}>
               <div className="w-[24%] text-left relative overflow-hidden">
-                {/* 기존 텍스트 - 호버 시 사라짐 */}
                 <motion.span
                   className="block"
                   initial={{ y: 0, opacity: 1 }}
@@ -122,7 +122,6 @@ function Home() {
                   }}>
                   {item.title}
                 </motion.span>
-                {/* 새 텍스트 - 호버 시 위로 올라오며 나타남 */}
                 <motion.span
                   className="absolute top-0 left-0"
                   initial={{ y: '100%', rotateX: -90, opacity: 0 }}
@@ -144,10 +143,10 @@ function Home() {
           ))}
         </ul>
       </section>
-      <section className="pl-[200px] mt-[5vw] text-right">
-        <div className="flex justify-between items-end mt-[4vw]">
-          <p className="text-[3.3vw] font-bold">(2)</p>
-          <p className="text-[1.2vw]">Others.</p>
+      <section className="max-w-screen-xl mx-auto mt-24">
+        <div className="flex justify-between items-end">
+          <p className="text-xl font-bold">(2)</p>
+          <p className="text-xl">Others.</p>
         </div>
         <ul className="border-t-2 border-black">
           {otherItems.map((item) => (
@@ -193,15 +192,15 @@ function Home() {
           ))}
         </ul>
       </section>
-      <section className="pr-[200px] mt-[10vw] flex">
+      <section className="flex max-w-screen-xl pt-48 mx-auto">
         <div className="w-1/2">
-          <h3 className="text-[6vw] font-PPNeueMontreal font-bold leading-none">
+          <h3 className="text-7xl font-bold font-PPNeueMontreal leading-none">
             About Me.
           </h3>
         </div>
-        <div className="w-1/2 pt-8 break-keep leading-normal">
+        <div className="w-1/2 break-keep leading-normal">
           <ul>
-            <li className="py-10 ">
+            <li className="py-10">
               <p className="px-2 mb-4 inline-block bg-black text-white">
                 Introduce.
               </p>
@@ -224,7 +223,9 @@ function Home() {
                 Career.
               </p>
               <p>
-                <span className="block mb-2 text-sm">2020.06 ~ 2024.03</span>
+                <span className="block mb-2 text-sm text-[#888]">
+                  2020.06 ~ 2024.03
+                </span>
                 랩스튜디오(Wrap Studio) / 퍼블리싱팀 팀장
               </p>
             </li>
@@ -280,10 +281,6 @@ function Home() {
             </li>
           </ul>
         </div>
-      </section>
-      <section className="mt-[6vw] bg-black text-white text-9xl font-PPNeueMontreal font-bold whitespace-nowrap">
-        <p>Thank you for taking the time to explore my portfolio. 👀</p>
-        <p>Thank you for taking the time to explore my portfolio. 👀</p>
       </section>
     </div>
   )
