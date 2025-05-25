@@ -7,6 +7,7 @@ import ProjectNH from './pages/ProjectNH'
 import ProjectWrap from './pages/ProjectWrap'
 import ProjectEasy from './pages/ProjectEasy'
 import ProjectXAB from './pages/ProjectXAB'
+import ProjectContact from './pages/ProjectContact'
 import ScrollToTop from './components/ScrollToTop'
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route path="/project/wrapstudio" element={<ProjectWrap />} />
           <Route path="/project/easytraffic" element={<ProjectEasy />} />
           <Route path="/project/xab" element={<ProjectXAB />} />
+          <Route path="/project/icontact" element={<ProjectContact />} />
         </Route>
       </Routes>
     </BrowserRouter>
