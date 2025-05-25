@@ -24,6 +24,7 @@ function ProjectCozyma() {
           </p>
           <div className="mt-10">
             <Link
+              target="_blank"
               to="https://cozyma.com/"
               className="inline-flex items-center gap-2 group text-black">
               <p className="flex items-center justify-center h-2 w-2 group-hover:h-6 group-hover:w-6 rounded-full bg-black transition-all duration-300 ease-in-out relative">
