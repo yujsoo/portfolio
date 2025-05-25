@@ -7,6 +7,7 @@ import { SiTypescript } from 'react-icons/si'
 import { RiTailwindCssFill } from 'react-icons/ri'
 import { IoLogoVercel } from 'react-icons/io5'
 import { SiVite } from 'react-icons/si'
+import peekImgc00 from '../assets/co-p-00.png'
 
 function ProjectContact() {
   return (
@@ -92,6 +93,23 @@ function ProjectContact() {
             <p className="flex justify-center items-center w-12 h-12 border border-[#ddd] rounded-md">
               <SiVite className="text-[#646CFF] text-2xl" />
             </p>
+          </div>
+        </li>
+        <li className="mb-14">
+          <ProjectSubTitle title="Peek into the Work." />
+          <div className="mb-4">
+            <strong className="relative pl-4 mb-2 text-black font-medium inline-block before:absolute before:left-0 before:top-[3px] before:w-1 before:h-4 before:bg-black before:content-['']">
+              프로젝트 일지 스크린샷
+            </strong>
+            <p className="text-md leading-relaxed">
+              기능을 구현하면서 마주한 문제와 그 해결 과정, 그리고 그때그때의 생각 흐름을 일기처럼 기록한 개인 프로젝트 일지입니다.<br/>
+              매 프로젝트마다 꾸준히 작성하며, 학습 과정과 성장의 흔적을 남기고 있습니다.
+            </p>
+          </div>
+          <div className="flex flex-wrap">
+            <div className="w-full sm:w-1/2">
+              <img src={peekImgc00} alt="" />
+            </div>
           </div>
         </li>
         <li className="mb-14">

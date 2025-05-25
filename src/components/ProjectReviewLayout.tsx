@@ -3,7 +3,7 @@ import { useInView } from 'react-intersection-observer'
 import { useEffect } from 'react'
 
 interface ProjectReviewLayoutProps {
-  title: string
+  title: React.ReactNode;
   date: string
   children: React.ReactNode
 }

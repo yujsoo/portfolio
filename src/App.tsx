@@ -8,6 +8,8 @@ import ProjectWrap from './pages/ProjectWrap'
 import ProjectEasy from './pages/ProjectEasy'
 import ProjectXAB from './pages/ProjectXAB'
 import ProjectContact from './pages/ProjectContact'
+import ProjectContrast from './pages/ProjectContrast'
+import ProjectCode from './pages/ProjectCode'
 import ScrollToTop from './components/ScrollToTop'
 
 function App() {
@@ -24,6 +26,8 @@ function App() {
           <Route path="/project/easytraffic" element={<ProjectEasy />} />
           <Route path="/project/xab" element={<ProjectXAB />} />
           <Route path="/project/icontact" element={<ProjectContact />} />
+          <Route path="/project/contrast" element={<ProjectContrast />} />
+          <Route path="/project/colorcode" element={<ProjectCode />} />
         </Route>
       </Routes>
     </BrowserRouter>
