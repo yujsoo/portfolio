@@ -41,7 +41,7 @@ const projectItems = [
     id: 5,
     title: '이지트래픽',
     subtitle: '이로운 세상을 위해 패러다임을 바꾸는 기업',
-    date: 'Feb.22 - Apr.22',
+    date: 'Feb.22 ~ Apr.22',
     link: '/project/easytraffic',
   },
   {
@@ -55,7 +55,7 @@ const projectItems = [
     id: 7,
     title: 'I-CONTACT',
     subtitle: '내 주변에서 시작하는 쉽고 빠른 네트워킹',
-    date: 'Dec.24 - Feb.25',
+    date: 'Feb.25 - Mar.25',
     link: '/project/icontact',
   },
 ]
