@@ -28,19 +28,20 @@ function ProjectReviewLayout({
 
   return (
     <>
-      <section className="mt-60 border-b border-b-black">
-        <div className="max-w-screen-xl mx-auto">
+      <section className="sm:mt-60 mt-40 border-b border-b-black">
+        <div className="max-w-screen-xl mx-auto px-6">
           <div className="bg-white overflow-hidden">
             <motion.div
               ref={ref}
-              className="bg-white overflow-hidden"
               initial={{ opacity: 0, y: 70 }}
               animate={controls}
               transition={{ duration: 0.6, ease: 'easeOut' }}>
-              <p className="inline-block px-2 py-1 text-xl font-poppins text-white bg-black">
+              <p className="inline-block px-2 py-1 sm:text-md lg:text-xl text-sm font-poppins text-white bg-black">
                 {date}
               </p>
-              <h3 className="text-9xl font-extrabold">{title}</h3>
+              <h3 className="sm:text-8xl lg:text-9xl text-6xl font-extrabold">
+                {title}
+              </h3>
             </motion.div>
           </div>
         </div>
@@ -50,7 +51,7 @@ function ProjectReviewLayout({
         initial={{ x: -50, opacity: 0 }}
         animate={inViewCon ? { x: 0, opacity: 1 } : {}}
         transition={{ duration: 0.6 }}
-        className="max-w-screen-xl mx-auto pt-24">
+        className="max-w-screen-xl mx-auto pt-24 px-6">
         {children}
       </motion.section>
     </>

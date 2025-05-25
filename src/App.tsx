@@ -5,6 +5,8 @@ import ProjectCozyma from './pages/ProjectCozyma'
 import ProjectGS from './pages/ProjectGS'
 import ProjectNH from './pages/ProjectNH'
 import ProjectWrap from './pages/ProjectWrap'
+import ProjectEasy from './pages/ProjectEasy'
+import ProjectXAB from './pages/ProjectXAB'
 import ScrollToTop from './components/ScrollToTop'
 
 function App() {
@@ -18,6 +20,8 @@ function App() {
           <Route path="/project/gs" element={<ProjectGS />} />
           <Route path="/project/nhcharge" element={<ProjectNH />} />
           <Route path="/project/wrapstudio" element={<ProjectWrap />} />
+          <Route path="/project/easytraffic" element={<ProjectEasy />} />
+          <Route path="/project/xab" element={<ProjectXAB />} />
         </Route>
       </Routes>
     </BrowserRouter>

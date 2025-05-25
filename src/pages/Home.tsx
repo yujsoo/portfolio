@@ -95,10 +95,10 @@ function Home() {
   })
 
   const titleControls = useAnimation()
-  const [titleRef, titleInView] = useInView({ threshold: 0.2 })
+  const [titleRef, titleInView] = useInView({ threshold: 0.1 })
 
   const listControls = useAnimation()
-  const [listRef, listInView] = useInView({ threshold: 0.2 })
+  const [listRef, listInView] = useInView({ threshold: 0.1 })
 
   useEffect(() => {
     if (inView) {
@@ -176,19 +176,18 @@ function Home() {
 
   return (
     <div className="overflow-hidden">
-      {/* 홈 - top */}
-      <section className="max-w-screen-xl mx-auto pt-96">
+      <section className="max-w-screen-xl mx-auto pt-96 px-6">
         <div className="overflow-hidden bg-white inline-block">
           <motion.p
-            className="text-[90px] font-PPNeueMontreal font-bold leading-none"
-            initial={{ opacity: 0, y: '50%' }}
+            className="text-[40px] md:text-[50px] lg:text-[70px] xl:text-[90px] font-PPNeueMontreal font-bold leading-none"
+            initial={{ opacity: 0, y: '60%' }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: 'easeOut' }}>
-            Hello, I’m Jisoo Yu — 👋
+            transition={{ duration: 0.5, ease: 'easeOut' }}>
+            Hello,
+            <br /> I’m Jisoo Yu — 👋
             <br />a Frontend Developer.
           </motion.p>
         </div>
-
         <div ref={introVideoCon}>
           <video
             className="relative z-2 w-full m-auto"
@@ -205,7 +204,7 @@ function Home() {
           initial={{ opacity: 0, y: 30 }}
           animate={controls}
           transition={{ duration: 0.6, ease: 'easeOut' }}
-          className="mt-48 text-center text-xl font-PPNeueMontreal">
+          className="mt-20 xl:mt-48 text-center text-md xl:text-xl font-PPNeueMontreal">
           <p>
             PASSIONATE ABOUT BUILDING <br />
             INTUITIVE AND PERFORMANT WEB APPLICATIONS
@@ -213,12 +212,12 @@ function Home() {
           <p className="mt-12">CODE. IMPROVE. REPEAT.</p>
         </motion.div>
       </section>
-
-      {/* 홈 - experience */}
-      <section id="experience" className="max-w-screen-xl mx-auto pt-48">
+      <section
+        id="experience"
+        className="max-w-screen-xl mx-auto pt-32 xl:pt-48 px-6">
         <div className="overflow-hidden">
           <motion.h3
-            className="mb-16 text-7xl font-bold font-PPNeueMontreal"
+            className="mb-16 text-5xl md:text-7xl font-bold font-PPNeueMontreal"
             ref={ref2}
             initial={{ opacity: 0, x: 0 }}
             animate={controls2}
@@ -243,7 +242,7 @@ function Home() {
                 onMouseEnter={() => setHoveredId(item.id)}
                 onMouseLeave={() => setHoveredId(null)}>
                 <Link to={item.link} className="flex p-6 relative">
-                  <div className="w-[24%] text-left relative overflow-hidden">
+                  <div className="w-1/2 md:w-[24%] text-left relative overflow-hidden">
                     <motion.span
                       className="block"
                       initial={{ y: 0, opacity: 1 }}
@@ -273,7 +272,7 @@ function Home() {
                       {item.title}
                     </motion.span>
                   </div>
-                  <p className="flex-auto text-left font-poppins">
+                  <p className="flex-auto text-right md:text-left font-poppins">
                     {item.date}
                   </p>
                 </Link>
@@ -292,8 +291,7 @@ function Home() {
                 onMouseEnter={() => setHoveredId(item.id)}
                 onMouseLeave={() => setHoveredId(null)}>
                 <Link to={item.link} className="flex p-6 relative">
-                  <div className="w-[24%] text-left relative overflow-hidden">
-                    {/* 기존 텍스트 - 호버 시 사라짐 */}
+                  <div className="w-1/2 md:w-[24%] text-left relative overflow-hidden">
                     <motion.span
                       className="block"
                       initial={{ y: 0, opacity: 1 }}
@@ -307,7 +305,6 @@ function Home() {
                       }}>
                       {item.title}
                     </motion.span>
-                    {/* 새 텍스트 - 호버 시 위로 올라오며 나타남 */}
                     <motion.span
                       className="absolute top-0 left-0"
                       initial={{ y: '100%', rotateX: -90, opacity: 0 }}
@@ -324,7 +321,7 @@ function Home() {
                       {item.title}
                     </motion.span>
                   </div>
-                  <p className="flex-auto text-left font-poppins">
+                  <p className="flex-auto text-right md:text-left font-poppins">
                     {item.date}
                   </p>
                 </Link>
@@ -333,19 +330,21 @@ function Home() {
           </ul>
         </motion.div>
       </section>
-      <section id="about" className="flex max-w-screen-xl pt-48 mx-auto">
+      <section
+        id="about"
+        className="flex max-w-screen-xl mx-auto pt-36 xl:pt-48 px-6 flex-wrap">
         <motion.div
-          className="w-1/2"
+          className="w-full md:w-1/2"
           ref={titleRef}
           initial={{ opacity: 0, x: -50 }}
           animate={titleControls}
           transition={{ duration: 0.6, ease: 'easeOut' }}>
-          <h3 className="text-7xl font-bold font-PPNeueMontreal leading-none">
+          <h3 className="text-5xl md:text-7xl font-bold font-PPNeueMontreal leading-none">
             About Me.
           </h3>
         </motion.div>
         <motion.div
-          className="w-1/2 break-keep leading-normal"
+          className="w-full md:w-1/2 break-keep leading-normal"
           ref={listRef}
           initial={{ opacity: 0, y: 50 }}
           animate={listControls}
