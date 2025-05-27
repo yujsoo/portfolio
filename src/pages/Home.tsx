@@ -1,81 +1,13 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-
 import introVideo from '../assets/intro.mp4'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useInView } from 'react-intersection-observer'
 import { useAnimation, motion } from 'framer-motion'
 import { useLocation } from 'react-router-dom'
-
-const projectItems = [
-  {
-    id: 1,
-    title: '코지마',
-    subtitle: '편안한 휴식파트너',
-    date: 'Jun.22 - Feb.23',
-    link: '/project/cozyma',
-  },
-  {
-    id: 2,
-    title: 'GS칼텍스',
-    subtitle: '에너지, 그 가능성을 넓히다.',
-    date: 'Apr.23 - Feb.24',
-    link: '/project/gs',
-  },
-  {
-    id: 3,
-    title: 'NH Charge',
-    subtitle: '편리한 충전라이프의 시작',
-    date: 'Apr.23 - Feb.24',
-    link: '/project/nhcharge',
-  },
-  {
-    id: 4,
-    title: '랩스튜디오',
-    subtitle: '일상과 디지털공간의 조화',
-    date: 'Dec.23 - Jan.24',
-    link: '/project/wrapstudio',
-  },
-  {
-    id: 5,
-    title: '이지트래픽',
-    subtitle: '이로운 세상을 위해 패러다임을 바꾸는 기업',
-    date: 'Feb.22 ~ Apr.22',
-    link: '/project/easytraffic',
-  },
-  {
-    id: 6,
-    title: 'XAB',
-    subtitle: 'SNS 형태의 A/B 테스트 플랫폼',
-    date: 'Dec.24 - Feb.25',
-    link: '/project/xab',
-  },
-  {
-    id: 7,
-    title: 'I-CONTACT',
-    subtitle: '내 주변에서 시작하는 쉽고 빠른 네트워킹',
-    date: 'Feb.25 - Mar.25',
-    link: '/project/icontact',
-  },
-]
-
-const otherItems = [
-  {
-    id: 1,
-    title: '웹접근성 명도대비 검사 도구',
-    subtitle: '작은 차이가 사용자 경험을 만든다.',
-    date: 'Apr.22 - Jun.22',
-    link: '/project/contrast',
-  },
-  {
-    id: 2,
-    title: '색상 코드 변환 도구',
-    subtitle: '색을 바꾸는 가장 빠른 방법',
-    date: 'Apr.22 - Jun.22',
-    link: '/project/colorcode',
-  },
-]
+import { projectItems } from '../data/projectItems'
+import { otherItems } from '../data/otherItems'
 
 function Home() {
   const [hoveredId, setHoveredId] = useState<number | null>(null)
