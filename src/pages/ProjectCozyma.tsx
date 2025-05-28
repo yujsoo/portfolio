@@ -4,7 +4,6 @@ import ProjectSubTitle from '../components/ProjectSubTitle'
 import { FiArrowRight } from 'react-icons/fi'
 import { FaHtml5 } from 'react-icons/fa'
 import { FaCss3Alt } from 'react-icons/fa'
-import { IoLogoJavascript } from 'react-icons/io5'
 import { DiJqueryLogo } from 'react-icons/di'
 import { SiSwiper } from 'react-icons/si'
 
@@ -53,8 +52,7 @@ function ProjectCozyma() {
           <ProjectSubTitle title="Main Tasks." />
           <div className="flex flex-col gap-2">
             <p className="relative pl-4 before:absolute before:left-0 before:top-0  before:content-['-']">
-              쇼핑몰 전 페이지 퍼블리싱 - 다양한 디바이스 환경에 대응하는 반응형
-              구현
+              쇼핑몰 전 페이지 퍼블리싱 (디바이스 환경에 대응하는 반응형 구현)
             </p>
             <p className="relative pl-4 before:absolute before:left-0 before:top-0  before:content-['-']">
               웹 접근성 기준을 고려한 마크업 적용
