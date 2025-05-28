@@ -71,9 +71,6 @@ function ProjectCozyma() {
               <FaCss3Alt className="text-[#1572B6] text-2xl" />
             </p>
             <p className="flex justify-center items-center w-12 h-12 border border-[#ddd] rounded-md">
-              <IoLogoJavascript className="text-[#F7DF1E] text-2xl" />
-            </p>
-            <p className="flex justify-center items-center w-12 h-12 border border-[#ddd] rounded-md">
               <DiJqueryLogo className="text-[#0769AD] text-2xl" />
             </p>
             <p className="flex justify-center items-center w-12 h-12 border border-[#ddd] rounded-md">
