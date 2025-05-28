@@ -47,22 +47,17 @@ function ProjectCozyma() {
             <p className="relative pl-4 before:absolute before:left-0 before:top-0  before:content-['-']">
               퍼블리싱 전담
             </p>
-            <p className="relative pl-4 before:absolute before:left-0 before:top-0  before:content-['-']">
-              협업을 위한 디자인/개발 소통
-            </p>
           </div>
         </li>
         <li className="mb-14">
           <ProjectSubTitle title="Main Tasks." />
           <div className="flex flex-col gap-2">
             <p className="relative pl-4 before:absolute before:left-0 before:top-0  before:content-['-']">
-              쇼핑몰 전 페이지 퍼블리싱
+              쇼핑몰 전 페이지 퍼블리싱 - 다양한 디바이스 환경에 대응하는 반응형
+              구현
             </p>
             <p className="relative pl-4 before:absolute before:left-0 before:top-0  before:content-['-']">
-              반응형 웹 레이아웃 설계 및 구현
-            </p>
-            <p className="relative pl-4 before:absolute before:left-0 before:top-0  before:content-['-']">
-              웹 접근성 준수를 위한 시맨틱 마크업 적용
+              웹 접근성 기준을 고려한 마크업 적용
             </p>
           </div>
         </li>
