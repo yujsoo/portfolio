@@ -3,7 +3,7 @@ import { useInView } from 'react-intersection-observer'
 import { useEffect } from 'react'
 
 interface ProjectReviewLayoutProps {
-  title: React.ReactNode;
+  title: React.ReactNode
   date: string
   children: React.ReactNode
 }
@@ -39,7 +39,7 @@ function ProjectReviewLayout({
               <p className="inline-block px-2 py-1 sm:text-md lg:text-xl text-sm font-poppins text-white bg-black">
                 {date}
               </p>
-              <h3 className="sm:text-8xl lg:text-9xl text-6xl font-extrabold">
+              <h3 className="sm:text-8xl lg:text-9xl text-6xl font-extrabold break-keep">
                 {title}
               </h3>
             </motion.div>

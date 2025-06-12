@@ -7,6 +7,9 @@ export default {
         poppins: ['poppins'],
         pretendard: ['pretendard'],
       },
+      wordBreak: {
+        keep: 'keep-all',
+      },
     },
   },
 }

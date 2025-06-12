@@ -8,6 +8,8 @@ import { useAnimation, motion } from 'framer-motion'
 import { useLocation } from 'react-router-dom'
 import { projectItems } from '../data/projectItems'
 import { otherItems } from '../data/otherItems'
+import { frontItems } from '../data/frontItems'
+import { BiHealth } from 'react-icons/bi'
 
 function Home() {
   const [hoveredId, setHoveredId] = useState<number | null>(null)
@@ -18,7 +20,7 @@ function Home() {
   const controls2 = useAnimation()
   const controls3 = useAnimation()
 
-  const [ref, inView] = useInView({ threshold: 0.5 })
+  const [ref, inView] = useInView({ threshold: 0.2 })
   const [ref2, inView2] = useInView({
     threshold: 0.5,
   })
@@ -136,12 +138,61 @@ function Home() {
           initial={{ opacity: 0, y: 30 }}
           animate={controls}
           transition={{ duration: 0.6, ease: 'easeOut' }}
-          className="mt-20 xl:mt-48 text-center text-md xl:text-xl font-PPNeueMontreal">
-          <p>
-            PASSIONATE ABOUT BUILDING <br />
-            INTUITIVE AND PERFORMANT WEB APPLICATIONS
+          className="mt-20 xl:mt-48 text-center">
+          <BiHealth className="text-3xl mx-auto mb-8" />
+          <p className="mb-14 leading-relaxed text-[16px] xl:text-xl xl:leading-normal">
+            유연하게 소통하고, 끈기있게 개발합니다.
+            <br /> 그동안의 실무 경험을 바탕으로, 제가 자신 있게 말씀드릴 수
+            있는 강점은 다음과 같습니다.
+            <br /> 이러한 역량은 단순한 구현을 넘어서, 구조적이고 유지보수가
+            쉬운 프론트엔드 개발을 실현하는 데 큰 힘이 됩니다.
           </p>
-          <p className="mt-12">CODE. IMPROVE. REPEAT.</p>
+          <ol className="max-w-5xl mx-auto p-10 xl:p-14 border border-[#ddd] rounded-md">
+            <li className="pb-8 mb-8 border-b border-[#ddd]">
+              <p className="block mb-4 text-[18px] xl:text-xl font-semibold">
+                <span className="block mb-2 font-normal">01</span>
+                다수 프로젝트 병행 속에서도 완성도 높은 결과물
+              </p>
+              <p className="leading-relaxed break-keep text-[#494848]">
+                웹 에이전시에서 여러 프로젝트를 동시에 진행하며,
+                <br className="hidden lg:block" /> 마감만을 목표로 하지 않고 각
+                작업의 완성도까지 고려하는 자세로 임했습니다.
+              </p>
+            </li>
+            <li className="pb-8 mb-8 border-b border-[#ddd]">
+              <p className="block mb-4 text-[18px] xl:text-xl font-semibold">
+                <span className="block mb-2 font-normal">02</span>
+                유지보수를 고려한 꼼꼼한 마크업
+              </p>
+              <p className="leading-relaxed break-keep text-[#494848]">
+                한 줄의 코드도 쉽게 지나치지 않고, 다른 사람이 이해하고 이어받기
+                쉬운 구조인지 항상 점검하며 작성합니다.
+              </p>
+            </li>
+            <li className="pb-8 mb-8 border-b border-[#ddd]">
+              <p className="block mb-4 text-[18px] xl:text-xl font-semibold">
+                <span className="block mb-2 font-normal">03</span>
+                디테일과 구조에 대한 고민
+              </p>
+              <p className="leading-relaxed break-keep text-[#494848]">
+                “더 나은 구조는 없을까?”, “확장과 수정이 쉬운 방향일까?”를
+                스스로에게 끊임없이 질문하며 작업해왔습니다. <br />그 덕분에
+                협업과 유지보수 측면에서 좋은 평가를 받았습니다.
+              </p>
+            </li>
+            <li>
+              <p className="block mb-4 text-[18px] xl:text-xl font-semibold">
+                <span className="block mb-2 font-normal">04</span>
+                유연한 소통과 리더십
+              </p>
+              <p className="leading-relaxed break-keep text-[#494848]">
+                퍼블리싱팀 리드 역할을 바탕으로 팀원들과 적극적으로 소통하며
+                <br className="hidden lg:block" />
+                문제를 신속히 파악하고 해결하여, 여러 프로젝트를 성공적으로
+                완수했습니다.
+              </p>
+            </li>
+          </ol>
         </motion.div>
       </section>
       <section
@@ -155,6 +206,10 @@ function Home() {
             animate={controls2}
             transition={{ duration: 0.6, ease: 'easeOut' }}>
             Selected Projects.
+            <p className="mt-6 text-[15px] md:text-base font-normal leading-relaxed break-keep">
+              디자인 구현부터 개발까지의 경험을 담은 주요 프로젝트입니다.
+              <br /> 각 프로젝트의 기능적 특징과 기술적 고민을 소개합니다.
+            </p>
           </motion.h3>
         </div>
         <motion.div
@@ -163,8 +218,8 @@ function Home() {
           animate={controls3}
           transition={{ duration: 0.6, ease: 'easeOut' }}>
           <div className="flex justify-between items-end">
-            <p className="text-xl font-bold">(6)</p>
-            <p className="text-xl">Experience.</p>
+            <p className="text-base md:text-xl font-bold">(5)</p>
+            <p className="text-base md:text-xl">Publishing.</p>
           </div>
           <ul className="border-t-2 border-black">
             {projectItems.map((item) => (
@@ -212,8 +267,59 @@ function Home() {
             ))}
           </ul>
           <div id="others" className="flex justify-between pt-24 items-end">
-            <p className="text-xl font-bold">(2)</p>
-            <p className="text-xl">Others.</p>
+            <p className="text-base md:text-xl font-bold">(2)</p>
+            <p className="text-base md:text-xl text-right">
+              Frontend Development.
+            </p>
+          </div>
+          <ul className="border-t-2 border-black">
+            {frontItems.map((item) => (
+              <li
+                key={item.id}
+                className=" border-black border-b hover:bg-black hover:text-white transition-all transition-duration-300"
+                onMouseEnter={() => setHoveredId(item.id)}
+                onMouseLeave={() => setHoveredId(null)}>
+                <Link to={item.link} className="flex p-6 relative">
+                  <div className="w-1/2 md:w-[24%] text-left relative overflow-hidden">
+                    <motion.span
+                      className="block"
+                      initial={{ y: 0, opacity: 1 }}
+                      animate={{
+                        y: hoveredId === item.id ? '-100%' : 0,
+                        opacity: hoveredId === item.id ? 0 : 1,
+                      }}
+                      transition={{
+                        duration: 0.3,
+                        ease: 'easeInOut',
+                      }}>
+                      {item.title}
+                    </motion.span>
+                    <motion.span
+                      className="absolute top-0 left-0"
+                      initial={{ y: '100%', rotateX: -90, opacity: 0 }}
+                      animate={{
+                        y: hoveredId === item.id ? '0%' : '100%',
+                        rotateX: hoveredId === item.id ? 0 : -90,
+                        opacity: hoveredId === item.id ? 1 : 0,
+                      }}
+                      transition={{
+                        duration: 0.5,
+                        ease: 'easeInOut',
+                      }}
+                      aria-hidden="true">
+                      {item.title}
+                    </motion.span>
+                  </div>
+                  <p className="flex-auto text-right md:text-left font-poppins">
+                    {item.date}
+                  </p>
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <div id="others" className="flex justify-between pt-24 items-end">
+            <p className="text-base md:text-xl font-bold">(2)</p>
+            <p className="text-base md:text-xl">Others.</p>
           </div>
           <ul className="border-t-2 border-black">
             {otherItems.map((item) => (
@@ -287,10 +393,10 @@ function Home() {
                 Introduce.
               </p>
               <p className="break-keep">
-                약 3년 10개월간 웹에이전시 스타트업에서 퍼블리셔로 근무하며
-                다양한 웹·앱 프로젝트를 경험했습니다. 마크업 구조와 접근성을
-                고려해 디자인 완성도를 높이는 동시에, 개발자가 효율적으로 활용할
-                수 있는 구조를 고민해왔습니다. <br />
+                3년 10개월간 웹사이트 디자인 및 퍼블리싱 전문 웹에이전시에서
+                퍼블리셔로 근무하며 다양한 웹·앱 프로젝트를 경험했습니다. <br />
+                마크업 구조와 접근성을 고려해 디자인 완성도를 높이는 동시에,
+                개발자가 효율적으로 활용할 수 있는 구조를 고민해왔습니다. <br />
                 외주 개발자와의 협업을 통해 디자인과 개발 간의 간극을 자연스럽게
                 좁혀왔고, 디자이너의 의도를 최대한 구현하기 위해 개발적인 시도도
                 꾸준히 해왔습니다. <br />
