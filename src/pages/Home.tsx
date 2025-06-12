@@ -200,13 +200,13 @@ function Home() {
         className="max-w-screen-xl mx-auto pt-32 xl:pt-48 px-6">
         <div className="overflow-hidden">
           <motion.h3
-            className="mb-16 text-5xl md:text-7xl font-bold font-PPNeueMontreal"
+            className="mb-16 text-lg font-light font-PPNeueMontreal"
             ref={ref2}
             initial={{ opacity: 0, x: 0 }}
             animate={controls2}
             transition={{ duration: 0.6, ease: 'easeOut' }}>
-            Selected Projects.
-            <p className="mt-6 text-[15px] md:text-base font-normal leading-relaxed break-keep">
+            Experience.
+            <p className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-normal sm:leading-normal lg:leading-snug break-keep">
               디자인 구현부터 개발까지의 경험을 담은 주요 프로젝트입니다.
               <br /> 각 프로젝트의 기능적 특징과 기술적 고민을 소개합니다.
             </p>
@@ -377,8 +377,10 @@ function Home() {
           initial={{ opacity: 0, x: -50 }}
           animate={titleControls}
           transition={{ duration: 0.6, ease: 'easeOut' }}>
-          <h3 className="text-5xl md:text-7xl font-bold font-PPNeueMontreal leading-none">
-            About Me.
+          <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-normal sm:leading-normal lg:leading-snug break-keep">
+            감사합니다. <br />
+            마지막으로,
+            <br /> 제 간단한 소개를 전합니다.
           </h3>
         </motion.div>
         <motion.div
