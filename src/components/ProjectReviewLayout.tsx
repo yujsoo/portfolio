@@ -15,7 +15,7 @@ function ProjectReviewLayout({
 }: ProjectReviewLayoutProps) {
   const controls = useAnimation()
 
-  const [ref, inView] = useInView({ threshold: 0.3 })
+  const [ref, inView] = useInView({ threshold: 0.3, triggerOnce: true })
   const [refCon, inViewCon] = useInView({ triggerOnce: true, threshold: 0.2 })
 
   useEffect(() => {

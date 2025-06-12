@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom'
 import introVideo from '../assets/intro.mp4'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { useInView } from 'react-intersection-observer'
-import { useAnimation, motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { useLocation } from 'react-router-dom'
 import { projectItems } from '../data/projectItems'
 import { otherItems } from '../data/otherItems'
@@ -15,48 +14,6 @@ function Home() {
   const [hoveredId, setHoveredId] = useState<number | null>(null)
 
   const introVideoCon = useRef(null)
-
-  const controls = useAnimation()
-  const controls2 = useAnimation()
-  const controls3 = useAnimation()
-
-  const [ref, inView] = useInView({ threshold: 0.2 })
-  const [ref2, inView2] = useInView({
-    threshold: 0.5,
-  })
-  const [ref3, inView3] = useInView({
-    threshold: 0.2,
-  })
-
-  const titleControls = useAnimation()
-  const [titleRef, titleInView] = useInView({ threshold: 0.1 })
-
-  const listControls = useAnimation()
-  const [listRef, listInView] = useInView({ threshold: 0.1 })
-
-  useEffect(() => {
-    if (inView) {
-      controls.start({ opacity: 1, y: 0 })
-    } else {
-      controls.start({ opacity: 0, y: 30 })
-    }
-  }, [inView, controls])
-
-  useEffect(() => {
-    if (inView2) {
-      controls2.start({ opacity: 1, x: 0 })
-    } else {
-      controls2.start({ opacity: 0, x: -100 })
-    }
-  }, [inView2, controls2])
-
-  useEffect(() => {
-    if (inView3) {
-      controls3.start({ opacity: 1, y: 0 })
-    } else {
-      controls3.start({ opacity: 0, y: 50 })
-    }
-  }, [inView3, controls3])
 
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
@@ -80,22 +37,6 @@ function Home() {
     )
   }, [])
 
-  useEffect(() => {
-    if (titleInView) {
-      titleControls.start({ opacity: 1, x: 0 })
-    } else {
-      titleControls.start({ opacity: 0, x: -50 })
-    }
-  }, [titleInView, titleControls])
-
-  useEffect(() => {
-    if (listInView) {
-      listControls.start({ opacity: 1, y: 0 })
-    } else {
-      listControls.start({ opacity: 0, y: 50 })
-    }
-  }, [listInView, listControls])
-
   const location = useLocation()
 
   useEffect(() => {
@@ -113,13 +54,14 @@ function Home() {
       <section className="max-w-screen-xl mx-auto pt-96 px-6">
         <div className="overflow-hidden bg-white inline-block">
           <motion.p
-            className="text-[40px] md:text-[50px] lg:text-[70px] xl:text-[90px] font-PPNeueMontreal font-bold leading-none"
+            className="text-[40px] md:text-[50px] lg:text-[70px] xl:text-[90px] font-bold leading-tight break-keep"
             initial={{ opacity: 0, y: '60%' }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: 'easeOut' }}>
-            Hello,
-            <br /> I’m Jisoo Yu — 👋
-            <br />a Frontend Developer.
+            안녕하세요.
+            <br /> 프론트엔드 개발자
+            <br />
+            유지수입니다. — 👋
           </motion.p>
         </div>
         <div ref={introVideoCon}>
@@ -133,12 +75,7 @@ function Home() {
             브라우저가 비디오를 지원하지 않습니다.
           </video>
         </div>
-        <motion.div
-          ref={ref}
-          initial={{ opacity: 0, y: 30 }}
-          animate={controls}
-          transition={{ duration: 0.6, ease: 'easeOut' }}
-          className="mt-20 xl:mt-48 text-center">
+        <motion.div className="mt-20 xl:mt-48 text-center">
           <BiHealth className="text-3xl mx-auto mb-8" />
           <p className="mb-14 leading-relaxed text-[16px] xl:text-xl xl:leading-normal">
             유연하게 소통하고, 끈기있게 개발합니다.
@@ -199,27 +136,25 @@ function Home() {
         id="experience"
         className="max-w-screen-xl mx-auto pt-32 xl:pt-48 px-6">
         <div className="overflow-hidden">
-          <motion.h3
-            className="mb-16 text-lg font-light font-PPNeueMontreal"
-            ref={ref2}
-            initial={{ opacity: 0, x: 0 }}
-            animate={controls2}
-            transition={{ duration: 0.6, ease: 'easeOut' }}>
-            Experience.
-            <p className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-normal sm:leading-normal lg:leading-snug break-keep">
+          <motion.h3 className="mb-16 text-center">
+            <span className="block mb-4 text-[#999] font-light font-PPNeueMontreal">
+              Experience
+            </span>
+            <strong className="block mb-4 text-3xl sm:text-4xl font-bold">
+              주요 프로젝트
+            </strong>
+            <p className="text-[15px] sm:text-lg leading-normal break-keep">
               디자인 구현부터 개발까지의 경험을 담은 주요 프로젝트입니다.
               <br /> 각 프로젝트의 기능적 특징과 기술적 고민을 소개합니다.
             </p>
           </motion.h3>
         </div>
-        <motion.div
-          ref={ref3}
-          initial={{ opacity: 0, y: 50 }}
-          animate={controls3}
-          transition={{ duration: 0.6, ease: 'easeOut' }}>
+        <motion.div>
           <div className="flex justify-between items-end">
             <p className="text-base md:text-xl font-bold">(5)</p>
-            <p className="text-base md:text-xl">Publishing.</p>
+            <p className="text-base md:text-xl font-PPNeueMontreal">
+              Publishing
+            </p>
           </div>
           <ul className="border-t-2 border-black">
             {projectItems.map((item) => (
@@ -266,10 +201,10 @@ function Home() {
               </li>
             ))}
           </ul>
-          <div id="others" className="flex justify-between pt-24 items-end">
+          <div className="flex justify-between pt-24 items-end">
             <p className="text-base md:text-xl font-bold">(2)</p>
-            <p className="text-base md:text-xl text-right">
-              Frontend Development.
+            <p className="text-base md:text-xl text-right font-PPNeueMontreal">
+              Frontend Development
             </p>
           </div>
           <ul className="border-t-2 border-black">
@@ -317,9 +252,28 @@ function Home() {
               </li>
             ))}
           </ul>
-          <div id="others" className="flex justify-between pt-24 items-end">
+        </motion.div>
+      </section>
+      <section
+        id="others"
+        className="max-w-screen-xl mx-auto pt-32 xl:pt-48 px-6">
+        <div className="overflow-hidden">
+          <motion.h3 className="mb-16 text-center">
+            <span className="block mb-4 text-[#999] font-light font-PPNeueMontreal">
+              Others
+            </span>
+            <strong className="block mb-4 text-3xl sm:text-4xl font-bold">
+              사심(♥) 프로젝트
+            </strong>
+            <p className="text-[15px] sm:text-lg leading-normal break-keep">
+              주요 프로젝트 외 개인적으로 진행한 서브 프로젝트입니다.
+            </p>
+          </motion.h3>
+        </div>
+        <motion.div>
+          <div className="flex justify-between items-end">
             <p className="text-base md:text-xl font-bold">(2)</p>
-            <p className="text-base md:text-xl">Others.</p>
+            <p className="text-base md:text-xl font-PPNeueMontreal">Others</p>
           </div>
           <ul className="border-t-2 border-black">
             {otherItems.map((item) => (
@@ -371,24 +325,14 @@ function Home() {
       <section
         id="about"
         className="flex max-w-screen-xl mx-auto pt-36 xl:pt-48 px-6 flex-wrap">
-        <motion.div
-          className="w-full md:w-1/2"
-          ref={titleRef}
-          initial={{ opacity: 0, x: -50 }}
-          animate={titleControls}
-          transition={{ duration: 0.6, ease: 'easeOut' }}>
+        <motion.div className="w-full md:w-1/2">
           <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-normal sm:leading-normal lg:leading-snug break-keep">
             감사합니다. <br />
             마지막으로,
             <br /> 제 간단한 소개를 전합니다.
           </h3>
         </motion.div>
-        <motion.div
-          className="w-full md:w-1/2 break-keep leading-normal"
-          ref={listRef}
-          initial={{ opacity: 0, y: 50 }}
-          animate={listControls}
-          transition={{ duration: 0.6, ease: 'easeOut' }}>
+        <motion.div className="w-full md:w-1/2 break-keep leading-normal">
           <ul>
             <li className="py-10">
               <p className="px-2 mb-4 inline-block bg-black text-white">
