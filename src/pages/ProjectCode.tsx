@@ -30,7 +30,8 @@ function ProjectCode() {
           <ProjectSubTitle title="Main Tasks" />
           <div className="flex flex-col gap-2">
             <p className="relative pl-4 before:absolute before:left-0 before:top-0  before:content-['-']">
-              HEX, RGB, HSL 간 변환이 가능한 컬러코드 실시간 변환 도구 개발
+              HEX, RGB, CMYK 간 실시간 변환 가능한 컬러 코드 변환 도구 개발 및
+              채도·명도별 보색 색상 표시 기능
             </p>
             <p className="relative pl-4 before:absolute before:left-0 before:top-0  before:content-['-']">
               실무자 편의를 고려한 직관적인 UI 및 즉시 결과 출력 처리 구현
