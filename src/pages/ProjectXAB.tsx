@@ -10,7 +10,7 @@ import { RiSupabaseFill } from 'react-icons/ri'
 
 function ProjectXAB() {
   return (
-    <ProjectReviewLayout title="XAB" date="Dec.24 ~ Feb.25">
+    <ProjectReviewLayout title="XAB" date="Dec.24 - Feb.25">
       <ul>
         <li className="mb-14">
           <ProjectSubTitle title="Overview" />
@@ -22,25 +22,25 @@ function ProjectXAB() {
             담당했습니다.
           </p>
           <div className="mt-10">
-            <p>
+            <div>
               <LinkBtn
                 text="깃허브 저장소 바로가기"
                 url="https://github.com/goorm-highfive/xab"
               />
-            </p>
-            <p className="mt-4">
+            </div>
+            <div className="mt-4">
               <LinkBtn
                 text="주요 트러블 슈팅 문서 바로가기"
                 url="https://scarce-maiasaura-f1f.notion.site/Troubleshooting-1d5afbe54cc6800c814af914fca8dbdd?pvs=74"
               />
-            </p>
+            </div>
           </div>
         </li>
         <li className="mb-14">
           <ProjectSubTitle title="Duration & Role" />
           <p className="mb-2 text-sm text-[#888]">Duration</p>
           <div className="mb-4">
-            <p>Dec.24 ~ Feb.25</p>
+            <p>Dec.24 - Feb.25</p>
           </div>
         </li>
         <li className="mb-14">
@@ -76,8 +76,8 @@ function ProjectXAB() {
             <p className="flex justify-center items-center w-12 h-12 border border-[#ddd] rounded-md">
               <RiSupabaseFill className="text-[#3ecf8e] text-2xl" />
             </p>
-            <p className="flex justify-center items-center w-12 h-12 border border-[#ddd] rounded-md">
-              <IoLogoVercel className="text-[#000] text-2xl" />
+            <p className="flex justify-center items-center w-12 h-12 border border-[#ddd] rounded-md bg-black">
+              <IoLogoVercel className="text-[#fff] text-2xl" />
             </p>
           </div>
         </li>

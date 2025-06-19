@@ -8,7 +8,7 @@ import { SiSwiper } from 'react-icons/si'
 
 function ProjectEasy() {
   return (
-    <ProjectReviewLayout title="이지트래픽" date="Feb.22 ~ Apr.22">
+    <ProjectReviewLayout title="이지트래픽" date="Feb.22 - Apr.22">
       <ul>
         <li className="mb-14">
           <ProjectSubTitle title="Overview" />
@@ -26,7 +26,7 @@ function ProjectEasy() {
           <ProjectSubTitle title="Duration & Role" />
           <p className="mb-2 text-sm text-[#888]">Duration</p>
           <div className="mb-4">
-            <p>Feb.22 ~ Apr.22</p>
+            <p>Feb.22 - Apr.22</p>
           </div>
           <p className="mb-2 text-sm text-[#888]">Role</p>
           <div className="flex flex-col gap-2">

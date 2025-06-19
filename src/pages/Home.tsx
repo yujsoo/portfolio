@@ -13,6 +13,21 @@ import ProjectItemsList from '../components/ProjectItemsList'
 import OtherItemsList from '../components/OtherItemsList'
 import { IoIosArrowForward } from 'react-icons/io'
 
+const fadeInUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0 },
+}
+
+const fadeInUpText = {
+  hidden: { opacity: 0, y: '60%' },
+  visible: { opacity: 1, y: 0 },
+}
+
+const fadeInLeft = {
+  hidden: { opacity: 0, x: -40 },
+  visible: { opacity: 1, x: 0 },
+}
+
 function Home() {
   const location = useLocation()
   const [hoveredId, setHoveredId] = useState<number | null>(null)
@@ -37,19 +52,40 @@ function Home() {
       <section className="max-w-screen-xl mx-auto pt-80 px-6">
         <div className="overflow-hidden bg-white inline-block">
           <motion.p
+            variants={fadeInUpText}
+            initial="hidden"
+            whileInView="visible"
             className="text-[40px] md:text-[50px] lg:text-[70px] xl:text-[90px] font-bold leading-tight break-keep"
-            initial={{ opacity: 0, y: '60%' }}
-            animate={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.5, ease: 'easeOut' }}>
             안녕하세요.
             <br />
             <span className="text-primary">프론트엔드 개발자</span>
             <br />
-            유지수입니다. — ❋
+            유지수입니다. —{' '}
+            <motion.span
+              animate={{ rotate: 360 }}
+              transition={{
+                repeat: Infinity,
+                duration: 2,
+                ease: 'linear',
+                delay: 0.6,
+              }}
+              className="inline-block text-primary">
+              ❋
+            </motion.span>
           </motion.p>
         </div>
-        <motion.div className="mt-20 xl:mt-48 text-center">
-          <p className="mb-14 leading-relaxed text-[16px] xl:text-xl xl:leading-normal">
+      </section>
+      <section className="max-w-screen-xl mx-auto mt-20 xl:mt-48">
+        <motion.div
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="text-center">
+          <p className="mb-14 text-[16px] leading-relaxed xl:text-xl xl:leading-normal">
             <span className="text-primary font-semibold">유연하게 소통</span>
             하고,{' '}
             <span className="text-primary font-semibold">끈기있게 개발</span>
@@ -108,9 +144,14 @@ function Home() {
           </ol>
         </motion.div>
       </section>
-      <section
+      <motion.section
         id="skill"
-        className="max-w-screen-xl mx-auto pt-32 xl:pt-48 px-6">
+        className="max-w-screen-xl mx-auto pt-32 xl:pt-48 px-6"
+        variants={fadeInUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.4, ease: 'easeOut' }}>
         <ConTitle
           title="기술 스택 및 툴"
           subTitle="Skills & Tools"
@@ -141,7 +182,6 @@ function Home() {
               {selectedItem.title}
             </p>
             <div className="flex flex-wrap md:flex-nowrap gap-4">
-              {/* 주력 */}
               <div className="w-full md:w-1/2">
                 <p className="mb-2 text-sm text-center">주력</p>
                 {selectedItem.familiar.length > 0 ? (
@@ -161,8 +201,6 @@ function Home() {
                   </p>
                 )}
               </div>
-
-              {/* 경험 */}
               <div className="w-full md:w-1/2">
                 <p className="mb-2 text-sm text-center">경험</p>
                 {selectedItem.tried.length > 0 ? (
@@ -185,9 +223,14 @@ function Home() {
             </div>
           </li>
         </ul>
-      </section>
-      <section
+      </motion.section>
+      <motion.section
         id="experience"
+        variants={fadeInUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.4, ease: 'easeOut' }}
         className="max-w-screen-xl mx-auto pt-32 xl:pt-48 px-6">
         <ConTitle
           title="주요 프로젝트"
@@ -199,67 +242,71 @@ function Home() {
             </>
           }
         />
-        <motion.div>
+
+        <ProjectTableTitle
+          length={projectItems.length}
+          tableTitle="Publishing"
+        />
+        <ProjectItemsList hoveredId={hoveredId} setHoveredId={setHoveredId} />
+        <div className="pt-24">
           <ProjectTableTitle
-            length={projectItems.length}
-            tableTitle="Publishing"
+            length={frontItems.length}
+            tableTitle="Frontend Development"
           />
-          <ProjectItemsList hoveredId={hoveredId} setHoveredId={setHoveredId} />
-          <div className="pt-24">
-            <ProjectTableTitle
-              length={frontItems.length}
-              tableTitle="Frontend Development"
-            />
-          </div>
-          <ul className="border-t-2 border-black">
-            {frontItems.map((item) => (
-              <li
-                key={item.id}
-                className=" border-black border-b hover:bg-black hover:text-white transition-all transition-duration-300"
-                onMouseEnter={() => setHoveredId(item.id)}
-                onMouseLeave={() => setHoveredId(null)}>
-                <Link to={item.link} className="flex p-6 relative">
-                  <div className="w-1/2 text-left relative overflow-hidden">
-                    <motion.span
-                      className="block"
-                      initial={{ y: 0, opacity: 1 }}
-                      animate={{
-                        y: hoveredId === item.id ? '-100%' : 0,
-                        opacity: hoveredId === item.id ? 0 : 1,
-                      }}
-                      transition={{
-                        duration: 0.3,
-                        ease: 'easeInOut',
-                      }}>
-                      {item.title}
-                    </motion.span>
-                    <motion.span
-                      className="absolute top-0 left-0"
-                      initial={{ y: '100%', rotateX: -90, opacity: 0 }}
-                      animate={{
-                        y: hoveredId === item.id ? '0%' : '100%',
-                        rotateX: hoveredId === item.id ? 0 : -90,
-                        opacity: hoveredId === item.id ? 1 : 0,
-                      }}
-                      transition={{
-                        duration: 0.5,
-                        ease: 'easeInOut',
-                      }}
-                      aria-hidden="true">
-                      {item.title}
-                    </motion.span>
-                  </div>
-                  <p className="w-1/2 text-right md:text-left font-poppins">
-                    {item.date}
-                  </p>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </motion.div>
-      </section>
-      <section
+        </div>
+        <ul className="border-t-2 border-black">
+          {frontItems.map((item) => (
+            <li
+              key={item.id}
+              className=" border-black border-b hover:bg-black hover:text-white transition-all transition-duration-300"
+              onMouseEnter={() => setHoveredId(item.id)}
+              onMouseLeave={() => setHoveredId(null)}>
+              <Link to={item.link} className="flex p-6 relative">
+                <div className="w-1/2 text-left relative overflow-hidden">
+                  <motion.span
+                    className="block"
+                    initial={{ y: 0, opacity: 1 }}
+                    animate={{
+                      y: hoveredId === item.id ? '-100%' : 0,
+                      opacity: hoveredId === item.id ? 0 : 1,
+                    }}
+                    transition={{
+                      duration: 0.3,
+                      ease: 'easeInOut',
+                    }}>
+                    {item.title}
+                  </motion.span>
+                  <motion.span
+                    className="absolute top-0 left-0"
+                    initial={{ y: '100%', rotateX: -90, opacity: 0 }}
+                    animate={{
+                      y: hoveredId === item.id ? '0%' : '100%',
+                      rotateX: hoveredId === item.id ? 0 : -90,
+                      opacity: hoveredId === item.id ? 1 : 0,
+                    }}
+                    transition={{
+                      duration: 0.5,
+                      ease: 'easeInOut',
+                    }}
+                    aria-hidden="true">
+                    {item.title}
+                  </motion.span>
+                </div>
+                <p className="w-1/2 text-right md:text-left font-poppins">
+                  {item.date}
+                </p>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </motion.section>
+      <motion.section
         id="others"
+        variants={fadeInUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.4, ease: 'easeOut' }}
         className="max-w-screen-xl mx-auto pt-32 xl:pt-48 px-6">
         <ConTitle
           title="개인 프로젝트"
@@ -270,19 +317,31 @@ function Home() {
           <ProjectTableTitle length={otherItems.length} tableTitle="Others" />
           <OtherItemsList hoveredId={hoveredId} setHoveredId={setHoveredId} />
         </motion.div>
-      </section>
+      </motion.section>
       <section
         id="current"
         className="max-w-screen-xl mx-auto pt-32 xl:pt-48 px-6">
         <div className="flex">
-          <motion.div className="w-full md:w-1/2">
+          <motion.div
+            variants={fadeInLeft}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.4, ease: 'easeOut' }}
+            className="w-full md:w-1/2">
             <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-normal sm:leading-normal lg:leading-snug break-keep">
               현재
               <br />
               이런 걸 하고 있어요.
             </h3>
           </motion.div>
-          <motion.div className="w-full md:w-1/2 break-keep leading-normal">
+          <motion.div
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.4, ease: 'easeOut', delay: 0.3 }}
+            className="w-full md:w-1/2 break-keep leading-normal">
             <ul>
               <li className="py-10">
                 <TextTag text="개인 프로젝트" />
@@ -295,18 +354,18 @@ function Home() {
                   링크에서 확인하실 수 있습니다!
                 </p>
                 <div className="mt-6">
-                  <p>
+                  <div>
                     <LinkBtn
                       text="블로그 바로가기"
                       url="https://yujsoo.tistory.com/category/Projects/mallan"
                     />
-                  </p>
-                  <p className="mt-4">
+                  </div>
+                  <div className="mt-4">
                     <LinkBtn
                       text="깃허브 저장소 바로가기"
                       url="https://github.com/yujeong-ran/mallan"
                     />
-                  </p>
+                  </div>
                 </div>
               </li>
               <li className="py-10">
@@ -336,116 +395,136 @@ function Home() {
       <section
         id="profile"
         className="flex max-w-screen-xl mx-auto pt-36 xl:pt-48 px-6 flex-wrap">
-        <motion.div className="w-full md:w-1/2">
-          <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-normal sm:leading-normal lg:leading-snug break-keep">
-            <span className="text-primary">감사합니다.</span> <br />
-            마지막으로,
-            <br /> 제 간단한 소개를 전합니다.
-          </h3>
-        </motion.div>
-        <motion.div className="w-full md:w-1/2 break-keep leading-normal">
-          <ul>
-            <li className="py-10">
-              <TextTag text="Introduce" />
-              <p className="break-keep">
-                3년 10개월간 웹사이트 디자인 및 퍼블리싱 전문 웹에이전시에서
-                퍼블리셔로 근무하며 다양한 웹·앱 프로젝트를 경험했습니다. <br />
-                마크업 구조와 접근성을 고려해 디자인 완성도를 높이는 동시에,
-                개발자가 효율적으로 활용할 수 있는 구조를 고민해왔습니다. <br />
-                외주 개발자와의 협업을 통해 디자인과 개발 간의 간극을 자연스럽게
-                좁혀왔고, 디자이너의 의도를 최대한 구현하기 위해 개발적인 시도도
-                꾸준히 해왔습니다. <br />
-                <br />
-                실무 경험을 바탕으로 프론트엔드 개발 역량을 키우기 위해, 구름톤
-                딥다이브 프론트엔드 개발자 과정을 수료했습니다. 해당 과정에서
-                React 기반 프로젝트를 진행하며 컴포넌트 설계, 상태 관리, API
-                연동, 성능 최적화 등 프론트엔드 핵심 기술을 학습하고 직접
-                구현해보았습니다. <br />
-                <br />
-                이제는 퍼블리싱을 넘어 사용자와 데이터, 로직을 아우르는
-                프론트엔드 개발자로의 전환을 준비하고 있습니다.
-              </p>
-            </li>
-            <li className="py-10">
-              <TextTag text="Career" />
-              <p>
-                <span className="block mb-2 text-sm text-[#888]">
-                  2020.06 - 2024.03
-                </span>
-                랩스튜디오(Wrap Studio) / 퍼블리싱팀 팀장
-              </p>
-              <button
-                onClick={() => setShowDetail((prev) => !prev)}
-                className="flex items-center mt-4 font-semibold transition-transform duration-300"
-                aria-expanded={showDetail}>
-                <IoIosArrowForward
-                  className={`mr-1 transition-transform duration-300 ${
-                    showDetail ? 'rotate-90' : ''
-                  }`}
-                />
-                {showDetail ? '주요 업무 내용 가리기' : '주요 업무 내용 보기'}
-              </button>
-              {showDetail && (
-                <ul className="pl-6 py-4 mt-2 list-disc list-inside leading-relaxed rounded-md bg-[#f9f7f7]">
-                  <li>반응형 웹 및 웹 접근성(웹 표준) 기반 퍼블리싱 수행 </li>
-                  <li>팀원 업무 분배 및 일정 조율</li>
-                  <li>프로젝트 검토 및 이슈 관리</li>
-                </ul>
-              )}
-            </li>
-            <li className="py-10 ">
-              <TextTag text="Education" />
-              <p className="mb-6">
-                <span className="block mb-1 text-sm text-[#888]">
-                  2016.03 - 2018.02
-                </span>
-                경인여자대학교 / 호텔관광학과 전공
-              </p>
-              <p className="mb-6">
-                <span className="block mb-1 text-sm text-[#888]">
-                  2019.11 - 2020.04
-                </span>
-                스마트기기 UI/UX 웹디자인(웹퍼블리셔) 과정 수료
-              </p>
-              <p>
-                <span className="block mb-1 text-sm text-[#888]">
-                  2024.08 - 2025.04
-                </span>
-                구름톤 딥다이브 프론트엔드 개발자 과정 수료
-              </p>
-            </li>
-            <li className="py-10">
-              <TextTag text="Channel" />
-              <p>
-                <Link
-                  to="https://github.com/yujsoo/"
-                  className="hover:underline">
-                  GitHub. https://github.com/yujsoo/
-                </Link>
-              </p>
-              <p className="mt-1">
-                <Link
-                  to="https://yujsoo.tistory.com/"
-                  className="hover:underline">
-                  blog. https://yujsoo.tistory.com/
-                </Link>
-              </p>
-            </li>
-            <li className="py-10">
-              <TextTag text="What I Love(♥︎) to Do!" />
-              <p className="mb-6">
-                <span className="block mb-1 text-[#888]">운동</span>
-                코드와 싸우기 위해선 체력과 멘탈 관리도 중요하죠!
-                <br /> 필라테스를 하며 집중력과 유연함을 챙기고 있습니다.
-              </p>
-              <p>
-                <span className="block mb-1 text-[#888]">여행</span>
-                새로운 공간과 낯선 분위기를 마주하는 걸 좋아해요.
-                <br /> 여행을 통해 자극과 아이디어를 얻곤 합니다.
-              </p>
-            </li>
-          </ul>
-        </motion.div>
+        <div className="w-full md:w-1/2">
+          <motion.div
+            variants={fadeInLeft}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.4, ease: 'easeOut' }}>
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-normal sm:leading-normal lg:leading-snug break-keep">
+              <span className="text-primary">감사합니다.</span> <br />
+              마지막으로,
+              <br /> 제 간단한 소개를 전합니다.
+            </h3>
+          </motion.div>
+        </div>
+        <div className="w-full md:w-1/2 break-keep leading-normal">
+          <motion.div
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{
+              duration: 0.4,
+              delay: 0.3,
+              ease: 'easeOut',
+            }}>
+            <ul>
+              <li className="py-10">
+                <TextTag text="Introduce" />
+                <p className="break-keep">
+                  3년 10개월간 웹사이트 디자인 및 퍼블리싱 전문 웹에이전시에서
+                  퍼블리셔로 근무하며 다양한 웹·앱 프로젝트를 경험했습니다.{' '}
+                  <br />
+                  마크업 구조와 접근성을 고려해 디자인 완성도를 높이는 동시에,
+                  개발자가 효율적으로 활용할 수 있는 구조를 고민해왔습니다.{' '}
+                  <br />
+                  외주 개발자와의 협업을 통해 디자인과 개발 간의 간극을
+                  자연스럽게 좁혀왔고, 디자이너의 의도를 최대한 구현하기 위해
+                  개발적인 시도도 꾸준히 해왔습니다. <br />
+                  <br />
+                  실무 경험을 바탕으로 프론트엔드 개발 역량을 키우기 위해,
+                  구름톤 딥다이브 프론트엔드 개발자 과정을 수료했습니다. 해당
+                  과정에서 React 기반 프로젝트를 진행하며 컴포넌트 설계, 상태
+                  관리, API 연동, 성능 최적화 등 프론트엔드 핵심 기술을 학습하고
+                  직접 구현해보았습니다. <br />
+                  <br />
+                  이제는 퍼블리싱을 넘어 사용자와 데이터, 로직을 아우르는
+                  프론트엔드 개발자로의 전환을 준비하고 있습니다.
+                </p>
+              </li>
+              <li className="py-10">
+                <TextTag text="Career" />
+                <p>
+                  <span className="block mb-2 text-sm text-[#888]">
+                    2020.06 - 2024.03
+                  </span>
+                  랩스튜디오(Wrap Studio) / 퍼블리싱팀 팀장
+                </p>
+                <button
+                  onClick={() => setShowDetail((prev) => !prev)}
+                  className="flex items-center mt-4 font-semibold transition-transform duration-300"
+                  aria-expanded={showDetail}>
+                  <IoIosArrowForward
+                    className={`mr-1 transition-transform duration-300 ${
+                      showDetail ? 'rotate-90' : ''
+                    }`}
+                  />
+                  {showDetail ? '주요 업무 내용 가리기' : '주요 업무 내용 보기'}
+                </button>
+                {showDetail && (
+                  <ul className="pl-6 py-4 mt-2 list-disc list-inside leading-relaxed rounded-md bg-[#f9f7f7]">
+                    <li>반응형 웹 및 웹 접근성(웹 표준) 기반 퍼블리싱 수행 </li>
+                    <li>팀원 업무 분배 및 일정 조율</li>
+                    <li>프로젝트 검토 및 이슈 관리</li>
+                  </ul>
+                )}
+              </li>
+              <li className="py-10 ">
+                <TextTag text="Education" />
+                <p className="mb-6">
+                  <span className="block mb-1 text-sm text-[#888]">
+                    2016.03 - 2018.02
+                  </span>
+                  경인여자대학교 / 호텔관광학과 전공
+                </p>
+                <p className="mb-6">
+                  <span className="block mb-1 text-sm text-[#888]">
+                    2019.11 - 2020.04
+                  </span>
+                  스마트기기 UI/UX 웹디자인(웹퍼블리셔) 과정 수료
+                </p>
+                <p>
+                  <span className="block mb-1 text-sm text-[#888]">
+                    2024.08 - 2025.04
+                  </span>
+                  구름톤 딥다이브 프론트엔드 개발자 과정 수료
+                </p>
+              </li>
+              <li className="py-10">
+                <TextTag text="Channel" />
+                <p>
+                  <Link
+                    to="https://github.com/yujsoo/"
+                    className="hover:underline">
+                    GitHub. https://github.com/yujsoo/
+                  </Link>
+                </p>
+                <p className="mt-1">
+                  <Link
+                    to="https://yujsoo.tistory.com/"
+                    className="hover:underline">
+                    blog. https://yujsoo.tistory.com/
+                  </Link>
+                </p>
+              </li>
+              <li className="py-10">
+                <TextTag text="What I Love(♥︎) to Do!" />
+                <p className="mb-6">
+                  <span className="block mb-1 text-[#888]">운동</span>
+                  코드와 싸우기 위해선 체력과 멘탈 관리도 중요하죠!
+                  <br /> 필라테스를 하며 집중력과 유연함을 챙기고 있습니다.
+                </p>
+                <p>
+                  <span className="block mb-1 text-[#888]">여행</span>
+                  새로운 공간과 낯선 분위기를 마주하는 걸 좋아해요.
+                  <br /> 여행을 통해 자극과 아이디어를 얻곤 합니다.
+                </p>
+              </li>
+            </ul>
+          </motion.div>
+        </div>
       </section>
     </div>
   )

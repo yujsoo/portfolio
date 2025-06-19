@@ -1,11 +1,10 @@
 import ProjectReviewLayout from '../components/ProjectReviewLayout'
 import ProjectSubTitle from '../components/ProjectSubTitle'
-import { Link } from 'react-router-dom'
-import { FiArrowRight } from 'react-icons/fi'
 import { FaHtml5 } from 'react-icons/fa'
 import { FaCss3Alt } from 'react-icons/fa'
 import { DiJqueryLogo } from 'react-icons/di'
 import gsapIcon from '../assets/ico_gsap.png'
+import LinkBtn from '../components/LinkBtn'
 
 function ProjectWrap() {
   return (
@@ -27,18 +26,7 @@ function ProjectWrap() {
             태그 구조와 메타 태그 작업도 함께 수행했습니다.
           </p>
           <div className="mt-10">
-            <Link
-              target="_blank"
-              to="https://wrapstudio.co.kr/"
-              className="inline-flex items-center gap-2 group text-black">
-              <p className="flex items-center justify-center h-2 w-2 group-hover:h-6 group-hover:w-6 rounded-full bg-black transition-all duration-300 ease-in-out relative">
-                <FiArrowRight className="w-3 h-3 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </p>
-              <p className="relative">
-                View Project
-                <span className="absolute left-0 -bottom-0 h-[1px] w-full bg-black scale-x-100 group-hover:scale-x-0 origin-right transition-transform duration-300 ease-in-out" />
-              </p>
-            </Link>
+            <LinkBtn text="View Project" url="https://wrapstudio.co.kr/" />
           </div>
         </li>
         <li className="mb-14">

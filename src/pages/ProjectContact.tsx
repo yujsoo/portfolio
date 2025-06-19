@@ -5,7 +5,7 @@ import { FaReact } from 'react-icons/fa'
 import { SiTypescript } from 'react-icons/si'
 import { RiTailwindCssFill } from 'react-icons/ri'
 import { IoLogoVercel } from 'react-icons/io5'
-import { SiVite } from 'react-icons/si'
+import viteIcon from '../assets/ico_vite.png'
 import peekImgc00 from '../assets/co-p-00.png'
 
 function ProjectContact() {
@@ -22,18 +22,18 @@ function ProjectContact() {
             실시간 채팅과 주변 참가자 탐색 기능을 중심으로 개발했습니다.
           </p>
           <div className="mt-10">
-            <p>
+            <div>
               <LinkBtn
                 text="깃허브 저장소 바로가기"
                 url="https://github.com/DeepDive-Final-Project/frontend"
               />
-            </p>
-            <p className="mt-4">
+            </div>
+            <div className="mt-4">
               <LinkBtn
                 text="주요 트러블 슈팅 문서 바로가기"
                 url="https://scarce-maiasaura-f1f.notion.site/Troubleshooting-1daafbe54cc680738f11ca1dc8615ec1?pvs=74"
               />
-            </p>
+            </div>
           </div>
         </li>
         <li className="mb-14">
@@ -70,11 +70,11 @@ function ProjectContact() {
             <p className="flex justify-center items-center w-12 h-12 border border-[#ddd] rounded-md">
               <RiTailwindCssFill className="text-[#38bdf8] text-2xl" />
             </p>
-            <p className="flex justify-center items-center w-12 h-12 border border-[#ddd] rounded-md">
-              <IoLogoVercel className="text-[#000] text-2xl" />
+            <p className="w-12 h-12 border border-[#ddd] rounded-md overflow-hidden">
+              <img src={viteIcon} alt="" className="w-full" />
             </p>
-            <p className="flex justify-center items-center w-12 h-12 border border-[#ddd] rounded-md">
-              <SiVite className="text-[#646CFF] text-2xl" />
+            <p className="flex justify-center items-center w-12 h-12 border border-[#ddd] rounded-md bg-black">
+              <IoLogoVercel className="text-[#fff] text-2xl" />
             </p>
           </div>
         </li>
