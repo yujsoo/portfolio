@@ -1,7 +1,6 @@
-import { Link } from 'react-router-dom'
 import ProjectReviewLayout from '../components/ProjectReviewLayout'
 import ProjectSubTitle from '../components/ProjectSubTitle'
-import { FiArrowRight } from 'react-icons/fi'
+import LinkBtn from '../components/LinkBtn'
 import { FaReact } from 'react-icons/fa'
 import { RiNextjsFill } from 'react-icons/ri'
 import { SiTypescript } from 'react-icons/si'
@@ -14,7 +13,7 @@ function ProjectXAB() {
     <ProjectReviewLayout title="XAB" date="Dec.24 ~ Feb.25">
       <ul>
         <li className="mb-14">
-          <ProjectSubTitle title="Overview." />
+          <ProjectSubTitle title="Overview" />
           <p className="leading-relaxed">
             구름톤 딥다이브 프론트엔드 과정에서 진행한 팀 프로젝트로, A/B 테스트
             기능을 핵심으로 한 SNS형 웹 서비스를 기획하고 개발하였습니다.
@@ -24,44 +23,28 @@ function ProjectXAB() {
           </p>
           <div className="mt-10">
             <p>
-              <Link
-                target="_blank"
-                to="https://github.com/goorm-highfive/xab"
-                className="inline-flex items-center gap-2 group text-black">
-                <p className="flex items-center justify-center h-2 w-2 group-hover:h-6 group-hover:w-6 rounded-full bg-black transition-all duration-300 ease-in-out relative">
-                  <FiArrowRight className="w-3 h-3 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </p>
-                <p className="relative">
-                  깃허브 저장소 바로가기
-                  <span className="absolute left-0 -bottom-0 h-[1px] w-full bg-black scale-x-100 group-hover:scale-x-0 origin-right transition-transform duration-300 ease-in-out" />
-                </p>
-              </Link>
+              <LinkBtn
+                text="깃허브 저장소 바로가기"
+                url="https://github.com/goorm-highfive/xab"
+              />
             </p>
             <p className="mt-4">
-              <Link
-                target="_blank"
-                to="https://scarce-maiasaura-f1f.notion.site/Troubleshooting-1d5afbe54cc6800c814af914fca8dbdd?pvs=74"
-                className="inline-flex items-center gap-2 group text-black">
-                <p className="flex items-center justify-center h-2 w-2 group-hover:h-6 group-hover:w-6 rounded-full bg-black transition-all duration-300 ease-in-out relative">
-                  <FiArrowRight className="w-3 h-3 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </p>
-                <p className="relative">
-                  주요 트러블 슈팅 노션 문서 바로가기
-                  <span className="absolute left-0 -bottom-0 h-[1px] w-full bg-black scale-x-100 group-hover:scale-x-0 origin-right transition-transform duration-300 ease-in-out" />
-                </p>
-              </Link>
+              <LinkBtn
+                text="주요 트러블 슈팅 문서 바로가기"
+                url="https://scarce-maiasaura-f1f.notion.site/Troubleshooting-1d5afbe54cc6800c814af914fca8dbdd?pvs=74"
+              />
             </p>
           </div>
         </li>
         <li className="mb-14">
-          <ProjectSubTitle title="Duration & Role." />
+          <ProjectSubTitle title="Duration & Role" />
           <p className="mb-2 text-sm text-[#888]">Duration</p>
           <div className="mb-4">
             <p>Dec.24 ~ Feb.25</p>
           </div>
         </li>
         <li className="mb-14">
-          <ProjectSubTitle title="Main Tasks." />
+          <ProjectSubTitle title="Main Tasks" />
           <div className="flex flex-col gap-2">
             <p className="relative pl-4 before:absolute before:left-0 before:top-0  before:content-['-']">
               게시글 상세 페이지 UI 화면 구현
@@ -76,7 +59,7 @@ function ProjectXAB() {
           </div>
         </li>
         <li className="mb-14">
-          <ProjectSubTitle title="Tech Stack." />
+          <ProjectSubTitle title="Tech Stack" />
           <div className="flex gap-2">
             <p className="flex justify-center items-center w-12 h-12 border border-[#ddd] rounded-md">
               <FaReact className="text-[#61dafb] text-2xl" />
@@ -99,7 +82,7 @@ function ProjectXAB() {
           </div>
         </li>
         <li className="mb-14">
-          <ProjectSubTitle title="Retrospective." />
+          <ProjectSubTitle title="Retrospective" />
           <p className="leading-relaxed">
             <b className="block mb-2">[이슈 리포트 작성 및 분석 경험 회고]</b>
             협업 과정에서 이슈 리포트를 작성하며, 같은 오류라도 원인이 다양할 수

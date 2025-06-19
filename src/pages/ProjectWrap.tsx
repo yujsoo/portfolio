@@ -5,13 +5,14 @@ import { FiArrowRight } from 'react-icons/fi'
 import { FaHtml5 } from 'react-icons/fa'
 import { FaCss3Alt } from 'react-icons/fa'
 import { DiJqueryLogo } from 'react-icons/di'
+import gsapIcon from '../assets/ico_gsap.png'
 
 function ProjectWrap() {
   return (
     <ProjectReviewLayout title="WrapStudio" date="Dec.23 - Jan.24">
       <ul>
         <li className="mb-14">
-          <ProjectSubTitle title="Overview." />
+          <ProjectSubTitle title="Overview" />
           <p className="leading-relaxed">
             랩스튜디오 회사 홈페이지 리뉴얼 프로젝트에 참여하여 전체 페이지
             퍼블리싱을 단독으로 진행했습니다.
@@ -41,7 +42,7 @@ function ProjectWrap() {
           </div>
         </li>
         <li className="mb-14">
-          <ProjectSubTitle title="Duration & Role." />
+          <ProjectSubTitle title="Duration & Role" />
           <p className="mb-2 text-sm text-[#888]">Duration</p>
           <div className="mb-4">
             <p>Dec.23 - Jan.24</p>
@@ -54,7 +55,7 @@ function ProjectWrap() {
           </div>
         </li>
         <li className="mb-14">
-          <ProjectSubTitle title="Main Tasks." />
+          <ProjectSubTitle title="Main Tasks" />
           <div className="flex flex-col gap-2">
             <p className="relative pl-4 before:absolute before:left-0 before:top-0  before:content-['-']">
               GSAP를 이용한 웹 애니메이션 및 인터랙션 구현
@@ -68,7 +69,7 @@ function ProjectWrap() {
           </div>
         </li>
         <li className="mb-14">
-          <ProjectSubTitle title="Tech Stack." />
+          <ProjectSubTitle title="Tech Stack" />
           <div className="flex gap-2">
             <p className="flex justify-center items-center w-12 h-12 border border-[#ddd] rounded-md">
               <FaHtml5 className="text-[#E34F26] text-2xl" />
@@ -79,10 +80,13 @@ function ProjectWrap() {
             <p className="flex justify-center items-center w-12 h-12 border border-[#ddd] rounded-md">
               <DiJqueryLogo className="text-[#0769AD] text-2xl" />
             </p>
+            <p className="w-12 h-12 border border-[#ddd] rounded-md overflow-hidden">
+              <img src={gsapIcon} alt="" className="w-full" />
+            </p>
           </div>
         </li>
         <li className="mb-14">
-          <ProjectSubTitle title="Retrospective." />
+          <ProjectSubTitle title="Retrospective" />
           <p className="leading-relaxed">
             이번 프로젝트는 <b>GSAP(GreenSock Animation Platform)</b>을 활용해
             페이지 전반에 걸친 인터랙션을 구현한 경험입니다.
@@ -96,10 +100,11 @@ function ProjectWrap() {
             구조를 최적화하여 검색 엔진에 잘 노출될 수 있도록 구성했습니다.
             <br />
             <br /> 애니메이션과 접근성/SEO는 자칫 상충할 수 있는 요소처럼
-            보이지만, 이번 작업을 통해 기획 단계부터 균형을 고려한다면 충분히
-            조화롭게 구현할 수 있다는 점을 직접 체감할 수 있었습니다.
-            <br /> 비주얼과 기술, 사용자 중심 사고를 함께 고민했던 이 프로젝트는
-            제게 더 깊이 있는 프론트엔드 개발 경험으로 남았습니다.
+            보이지만, 해당 프로젝트를 통해 기획 단계부터 균형을 고려한다면
+            충분히 조화롭게 구현할 수 있다는 점을 직접 체감할 수 있었습니다.
+            <br /> 시각적 요소뿐 아니라 기술적 요소, 사용자 중심의 사고까지 함께
+            고민한 이 프로젝트는 퍼블리셔로서 한 단계 더 성장할 수 있었던 계기가
+            되었습니다.
           </p>
         </li>
       </ul>

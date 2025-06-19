@@ -4,7 +4,7 @@
 
 html,
 body {
-  @apply text-black font-pretendard
+  @apply text-primary-dark font-pretendard
 }
 
 em {
