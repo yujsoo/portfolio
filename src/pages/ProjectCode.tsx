@@ -12,8 +12,9 @@ function ProjectCode() {
         <li className="mb-14">
           <ProjectSubTitle title="Overview" />
           <p className="leading-relaxed">
-            색상 코드 변환 도구를 기획하고 개발하여, 실무자들이 HEX, RGB, HSL
-            간의 색상 포맷을 실시간으로 변환할 수 있도록 구현했습니다.
+            색상 코드 변환 도구를 기획하고 개발하여, 실무자들이 HEX, RGB, CMYK
+            등 다양한 색상 포맷을 실시간으로 손쉽게 변환할 수 있도록
+            구현했습니다.
           </p>
           <div className="mt-10">
             <LinkBtn text="View Project" url="https://sitero.co.kr/colorcode" />
