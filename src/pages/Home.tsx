@@ -108,7 +108,9 @@ function Home() {
           </ol>
         </motion.div>
       </section>
-      <section className="max-w-screen-xl mx-auto pt-32 xl:pt-48 px-6">
+      <section
+        id="skill"
+        className="max-w-screen-xl mx-auto pt-32 xl:pt-48 px-6">
         <ConTitle
           title="기술 스택 및 툴"
           subTitle="Skills & Tools"
