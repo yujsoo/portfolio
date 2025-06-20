@@ -31,7 +31,7 @@ export const projectItems = [
     id: 5,
     title: '이지트래픽',
     subtitle: '이로운 세상을 위해 패러다임을 바꾸는 기업',
-    date: 'Feb.22 ~ Apr.22',
+    date: 'Feb.22 - Apr.22',
     link: '/project/easytraffic',
   },
 ]

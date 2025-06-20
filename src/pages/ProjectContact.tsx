@@ -6,7 +6,10 @@ import { SiTypescript } from 'react-icons/si'
 import { RiTailwindCssFill } from 'react-icons/ri'
 import { IoLogoVercel } from 'react-icons/io5'
 import viteIcon from '../assets/ico_vite.png'
-import peekImgc00 from '../assets/co-p-00.png'
+import contactitpImg01 from '../assets/contactitp-00.jpg'
+import contactitpImg02 from '../assets/contactitp-01-00.png'
+import contactitpImg03 from '../assets/contactitp-01-01.png'
+import { motion } from 'framer-motion'
 
 function ProjectContact() {
   return (
@@ -79,10 +82,10 @@ function ProjectContact() {
           </div>
         </li>
         <li className="mb-14">
-          <ProjectSubTitle title="Peek into the Work" />
-          <div className="mb-4">
+          <ProjectSubTitle title="Inside the Project" />
+          <div className="mb-10">
             <strong className="relative pl-4 mb-2 text-black font-medium inline-block before:absolute before:left-0 before:top-[3px] before:w-1 before:h-4 before:bg-black before:content-['']">
-              프로젝트 일지 스크린샷
+              프로젝트 진행 중 작성한 개발 일지
             </strong>
             <p className="text-md leading-relaxed">
               기능을 구현하면서 마주한 문제와 그 해결 과정, 그리고 그때그때의
@@ -90,18 +93,112 @@ function ProjectContact() {
               <br />매 프로젝트마다 꾸준히 작성하며, 학습 과정과 성장의 흔적을
               남기고 있습니다.
             </p>
-          </div>
-          <div className="flex flex-wrap">
-            <div className="w-full sm:w-1/2">
-              <img src={peekImgc00} alt="" />
+            <div className="mt-8 grid grid-cols-1 lg:grid-cols-3 sm:grid-cols-2 gap-6">
+              {[contactitpImg01].map((src, idx) => (
+                <div
+                  key={idx}
+                  className="rounded-xl overflow-hidden shadow-lg group relative">
+                  <img
+                    src={src}
+                    alt=""
+                    className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
+                  />
+                  <div className="absolute bottom-0 w-full bg-black text-white text-sm p-3">
+                    이미지 {idx + 1} / 개발 일지 스크린샷
+                  </div>
+                </div>
+              ))}
             </div>
+          </div>
+          <div>
+            <strong className="relative pl-4 mb-2 text-black font-medium inline-block before:absolute before:left-0 before:top-[3px] before:w-1 before:h-4 before:bg-black before:content-['']">
+              사용성 테스트(Usability Test) 진행
+            </strong>
+            <p className="text-md leading-relaxed">
+              실제 사용자에게 프로덕트를 직접 사용해보도록 한 후 피드백을
+              수집하는 사용성 테스트를 진행했습니다.
+              <br />
+              사용 과정에서 발생한 혼란 요소나 불편한 UI 요소를 파악하고, 이를
+              바탕으로 UI 개선 및 기능 흐름을 조정했습니다.
+            </p>
+            <div className="mt-8 grid grid-cols-1 lg:grid-cols-3 sm:grid-cols-2 gap-6">
+              {[contactitpImg02, contactitpImg03].map((src, idx) => (
+                <div
+                  key={idx}
+                  className="rounded-xl overflow-hidden shadow-lg group relative">
+                  <img
+                    src={src}
+                    alt=""
+                    className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
+                  />
+                  <div className="absolute bottom-0 w-full bg-black text-white text-sm p-3">
+                    이미지 {idx + 1} / 실제 사용자 피드백을 수집하기 위한 설문지
+                    화면
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="mt-10 bg-gray-50 p-6 rounded-xl">
+            <h3 className="text-lg font-semibold mb-4">
+              <motion.span
+                animate={{ rotate: 360 }}
+                transition={{
+                  repeat: Infinity,
+                  duration: 2,
+                  ease: 'linear',
+                }}
+                className="inline-block mr-2 font-normal align-top text-primary">
+                ❋
+              </motion.span>
+              채팅 기능 사용성 테스트 결과 및 개선사항
+            </h3>
+            <ul>
+              <li className="mb-4">
+                <strong className="float-left w-10 text-[#9e9eae] font-medium">
+                  문제
+                </strong>
+                <p className="ml-10">
+                  모바일 Safari에서 채팅 입력창을 터치하면 화면이 자동으로
+                  확대되어 UI가 깨지고 사용성이 떨어지는 현상이 있었습니다.
+                </p>
+              </li>
+              <li className="mb-4">
+                <strong className="float-left w-10 text-[#9e9eae] font-medium">
+                  원인
+                </strong>
+                <p className="ml-10">
+                  iOS Safari의 기본 동작으로, 폰트 크기가 16px 미만인 input에
+                  포커스가 맞춰질 때 자동 확대가 발생하는 것이 원인이었습니다.
+                </p>
+              </li>
+              <li className="mb-4">
+                <strong className="float-left w-10 text-[#9e9eae] font-medium">
+                  해결
+                </strong>
+                <p className="ml-10">
+                  여러 방법을 검토했지만, 해당 input에 특별한 디자인 제약이
+                  없어서 기존 15px 폰트 크기를 16px로 통일하여 간단하고
+                  효과적으로 문제를 해결했습니다.
+                </p>
+              </li>
+              <li>
+                <strong className="float-left w-10 text-[#9e9eae] font-medium">
+                  성과
+                </strong>
+                <p className="ml-10">
+                  이로써 Safari에서 발생하던 확대 문제를 제거했고, 모든 기기에서
+                  안정적이고 일관된 입력 경험을 제공할 수 있었습니다.
+                </p>
+              </li>
+            </ul>
           </div>
         </li>
         <li className="mb-14">
           <ProjectSubTitle title="Retrospective" />
           <p className="leading-relaxed">
-            <b className="block mb-2">
-              [가장 도전적이었던 문제와 그것을 해결한 과정]
+            <b className="block mb-2 pb-2 border-b border-[#ddd]">
+              가장 도전적이었던 문제와 그것을 해결한 과정
             </b>
             웹소켓을 활용한 다중 채팅방 기능을 구현하면서 연결 불안정 및 404
             오류가 지속 발생하는 문제를 겪었습니다. <br />

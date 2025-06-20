@@ -44,8 +44,8 @@ function ProjectReviewLayout({
         variants={fadeInUp}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.6, delay: 0.1 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.6, delay: 0.3 }}
         className="max-w-screen-xl mx-auto pt-24 px-6">
         {children}
       </motion.section>

@@ -60,8 +60,7 @@ function ProjectNH() {
               유연한 폼 구조 설계
             </p>
             <p className="relative pl-4 before:absolute before:left-0 before:top-0  before:content-['-']">
-              외부 개발자와의 원활한 협업을 위한 협업을 위한 퍼블리싱 가이드
-              문서 제작
+              외부 개발자와의 원활한 협업을 위한 퍼블리싱 가이드 문서 제작
             </p>
           </div>
         </li>
