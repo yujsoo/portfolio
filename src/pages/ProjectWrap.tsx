@@ -46,9 +46,6 @@ function ProjectWrap() {
               GSAP를 이용한 웹 애니메이션 및 인터랙션 구현
             </p>
             <p className="relative pl-4 before:absolute before:left-0 before:top-0  before:content-['-']">
-              웹 접근성 향상을 위한 시맨틱 마크업 적용
-            </p>
-            <p className="relative pl-4 before:absolute before:left-0 before:top-0  before:content-['-']">
               시맨틱 마크업과 최적화된 태그 구조로 검색엔진최적화(SEO) 고려
             </p>
           </div>

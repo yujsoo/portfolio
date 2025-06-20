@@ -2,9 +2,10 @@ import ProjectReviewLayout from '../components/ProjectReviewLayout'
 import ProjectSubTitle from '../components/ProjectSubTitle'
 import { FaHtml5 } from 'react-icons/fa'
 import { FaCss3Alt } from 'react-icons/fa'
-import { IoLogoJavascript } from 'react-icons/io5'
 import { DiJqueryLogo } from 'react-icons/di'
 import { DiJqueryUiLogo } from 'react-icons/di'
+import agIcon from '../assets/ico_ag.png'
+import chartIcon from '../assets/ico_chart.png'
 import peekImg00 from '../assets/nh-p-00.png'
 import peekImg01 from '../assets/nh-p-01.png'
 import peekImg02 from '../assets/nh-p-02.png'
@@ -74,13 +75,16 @@ function ProjectNH() {
               <FaCss3Alt className="text-[#1572B6] text-2xl" />
             </p>
             <p className="flex justify-center items-center w-12 h-12 border border-[#ddd] rounded-md">
-              <IoLogoJavascript className="text-[#F7DF1E] text-2xl" />
-            </p>
-            <p className="flex justify-center items-center w-12 h-12 border border-[#ddd] rounded-md">
               <DiJqueryLogo className="text-[#0769AD] text-2xl" />
             </p>
             <p className="flex justify-center items-center w-12 h-12 border border-[#ddd] rounded-md">
               <DiJqueryUiLogo className="text-[#F8981D]" />
+            </p>
+            <p className="w-12 h-12 border border-[#ddd] rounded-md overflow-hidden">
+              <img src={agIcon} alt="" className="w-full" />
+            </p>
+            <p className="w-12 h-12 border border-[#ddd] rounded-md overflow-hidden">
+              <img src={chartIcon} alt="" className="w-full" />
             </p>
           </div>
         </li>

@@ -1,6 +1,8 @@
 import ProjectReviewLayout from '../components/ProjectReviewLayout'
 import ProjectSubTitle from '../components/ProjectSubTitle'
 import { FaVuejs } from 'react-icons/fa'
+import agIcon from '../assets/ico_ag.png'
+import chartIcon from '../assets/ico_chart.png'
 
 function ProjectGS() {
   return (
@@ -53,6 +55,12 @@ function ProjectGS() {
           <div className="flex gap-2">
             <p className="flex justify-center items-center w-12 h-12 border border-[#ddd] rounded-md">
               <FaVuejs className="text-[#42b883] text-2xl" />
+            </p>
+            <p className="w-12 h-12 border border-[#ddd] rounded-md overflow-hidden">
+              <img src={agIcon} alt="" className="w-full" />
+            </p>
+            <p className="w-12 h-12 border border-[#ddd] rounded-md overflow-hidden">
+              <img src={chartIcon} alt="" className="w-full" />
             </p>
           </div>
         </li>
