@@ -459,7 +459,7 @@ function Home() {
                   {showDetail ? '주요 업무 내용 가리기' : '주요 업무 내용 보기'}
                 </button>
                 {showDetail && (
-                  <ul className="pl-6 py-4 mt-2 list-disc list-inside leading-relaxed rounded-md bg-[#f9f7f7]">
+                  <ul className="pl-6 py-4 mt-2 list-disc list-inside leading-relaxed rounded-md bg-gray-50">
                     <li>반응형 웹 및 웹 접근성(웹 표준) 기반 퍼블리싱 수행 </li>
                     <li>팀원 업무 분배 및 일정 조율</li>
                     <li>프로젝트 검토 및 이슈 관리</li>
