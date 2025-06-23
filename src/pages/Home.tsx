@@ -93,8 +93,6 @@ function Home() {
             <br /> 그동안의 실무 경험을 바탕으로,{' '}
             <br className="block sm:hidden" />
             제가 자신 있게 말씀드릴 수 있는 강점은 다음과 같습니다.
-            <br /> 이러한 역량은 단순한 구현을 넘어서, 구조적이고 유지보수가
-            쉬운 프론트엔드 개발을 실현하는 데 큰 힘이 됩니다.
           </p>
           <ol className="max-w-5xl mx-auto p-10 xl:p-14 border border-[#ddd] rounded-md">
             <li className="pb-8 mb-8 border-b border-[#ddd]">
