@@ -153,12 +153,7 @@ function Home() {
         <ConTitle
           title="기술 스택 및 툴"
           subTitle="Skills & Tools"
-          desc={
-            <>
-              아래의 기술을 사용할 수 있으며, <br />
-              협업 과정에서도 여러 협업 툴을 사용한 경험이 있습니다.
-            </>
-          }
+          desc={<>아래의 기술을 사용할 수 있습니다.</>}
         />
         <div className="flex gap-2 flex-wrap justify-center mb-10 -mt-7 md:mt-0">
           {skillItems.map((item, index) => (
