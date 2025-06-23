@@ -6,9 +6,9 @@ import { DiJqueryLogo } from 'react-icons/di'
 import { DiJqueryUiLogo } from 'react-icons/di'
 import agIcon from '../assets/ico_ag.png'
 import chartIcon from '../assets/ico_chart.png'
-import peekImg00 from '../assets/nh-p-00.png'
-import peekImg01 from '../assets/nh-p-01.png'
-import peekImg02 from '../assets/nh-p-02.png'
+import peekImg00 from '../assets/nh-p-00.jpg'
+import peekImg01 from '../assets/nh-p-01.jpg'
+import peekImg02 from '../assets/nh-p-02.jpg'
 
 function ProjectNH() {
   return (
@@ -89,24 +89,29 @@ function ProjectNH() {
           </div>
         </li>
         <li className="mb-14">
-          <ProjectSubTitle title="Peek into the Work" />
-          <div className="mb-4">
+          <ProjectSubTitle title="Inside the Project" />
+          <div>
             <strong className="relative pl-4 mb-2 text-black font-medium inline-block before:absolute before:left-0 before:top-[3px] before:w-1 before:h-4 before:bg-black before:content-['']">
-              퍼블리싱 가이드 스크린샷
+              퍼블리싱 가이드 문서 제작
             </strong>
-            <p className="text-md">
+            <p className="text-md leading-relaxed">
               구성 요소별 네이밍, 여백 기준, 확장 방안 등을 정리한 가이드입니다.
             </p>
-          </div>
-          <div className="flex flex-wrap">
-            <div className="w-full sm:w-1/2">
-              <img src={peekImg00} alt="" />
-            </div>
-            <div className="w-full sm:w-1/2">
-              <img src={peekImg01} alt="" />
-            </div>
-            <div className="w-full sm:w-1/2">
-              <img src={peekImg02} alt="" />
+            <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {[peekImg00, peekImg01, peekImg02].map((src, idx) => (
+                <div
+                  key={idx}
+                  className="rounded-xl overflow-hidden shadow-lg group relative">
+                  <img
+                    src={src}
+                    alt=""
+                    className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
+                  />
+                  <div className="absolute bottom-0 w-full bg-black text-white text-sm p-3">
+                    이미지 {idx + 1} / 퍼블리싱 가이드 문서 스크린샷
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </li>
